@@ -26,13 +26,13 @@ public class MeuPerfilFragment extends Fragment {
         meuPerfilViewModel =
                 new ViewModelProvider(this).get(MeuPerfilViewModel.class);
         View root = inflater.inflate(R.layout.meu_perfil_fragment, container, false);
-        final TextView textView = root.findViewById(R.id.text_meu_perfil);
-        meuPerfilViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+//        final TextView textView = root.findViewById(R.id.text_meu_perfil);
+//        meuPerfilViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
         return root;
     }
 }
