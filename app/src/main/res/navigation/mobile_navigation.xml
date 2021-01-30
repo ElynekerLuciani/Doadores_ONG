@@ -28,4 +28,10 @@
         android:name="com.example.doacao_ong.ui.meu_perfil.MeuPerfilFragment"
         android:label="Meu Perfil"
         tools:layout="@layout/meu_perfil_fragment" />
+
+    <fragment
+        android:id="@+id/nav_lancar_saida"
+        android:name="com.example.doacao_ong.ui.lancar_saida.LancarSaidaFragment"
+        android:label="Lançar Saída"
+        tools:layout="@layout/lancar_saida_fragment" />
 </navigation>

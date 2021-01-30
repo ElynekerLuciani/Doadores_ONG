@@ -21,5 +21,10 @@
             android:id="@+id/nav_meu_perfil"
             android:icon="@drawable/ic_menu_meu_perfil"
             android:title="Meu perfil" />
+
+        <item
+            android:id="@+id/nav_lancar_saida"
+            android:icon="@drawable/ic_menu_lancar_saida"
+            android:title="Lançar saída" />
     </group>
 </menu>

@@ -38,10 +38,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_meu_perfil)
-                .setDrawerLayout(drawer)
-                .build();
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_meu_perfil,
+                R.id.nav_lancar_saida).setDrawerLayout(drawer).build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
