@@ -1,18 +1,43 @@
 package com.example.doacao_ong.ui.meu_perfil;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class MeuPerfilViewModel extends ViewModel {
-    private MutableLiveData<String> mText;
+   private MeuPerfilModel meuPerfilModel;
 
     public MeuPerfilViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is meu perfil fragment");
+        this.meuPerfilModel = new MeuPerfilModel();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public MeuPerfilModel getMeuPerfilModel() {
+        return meuPerfilModel;
+    }
+
+    public void updateNome(String nome){
+        this.meuPerfilModel.setNome(nome);
+    }
+
+    public void updateEmail(String email){
+        this.meuPerfilModel.setEmail(email);
+    }
+
+    public void updateSenha(String senha){
+        this.meuPerfilModel.setSenha(senha);
+    }
+
+    public void updateConfirmSenha(String confirmSenha){
+        this.meuPerfilModel.setConfirmSenha(confirmSenha);
+    }
+
+    public void updateMissaoONG(String missaoONG){
+        this.meuPerfilModel.setMissaoONG(missaoONG);
+    }
+
+    public void updateDescricao(String descricao){
+        this.meuPerfilModel.setDescricao(descricao);
+    }
+
+    public void updateCausa(String causa){
+        this.meuPerfilModel.setCausa(causa);
     }
 }

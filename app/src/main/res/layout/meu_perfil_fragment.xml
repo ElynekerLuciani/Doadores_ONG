@@ -22,7 +22,7 @@
             android:text="Nome" />
 
         <EditText
-            android:id="@+id/input_nome"
+            android:id="@+id/input_mp_nome"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -43,7 +43,7 @@
             android:text="Email" />
 
         <EditText
-            android:id="@+id/input_email"
+            android:id="@+id/input_mp_email"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -64,9 +64,10 @@
             android:text="Senha" />
 
         <EditText
-            android:id="@+id/input_senha"
+            android:id="@+id/input_mp_senha"
             android:layout_width="300dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
     </LinearLayout>
 
     <LinearLayout
@@ -85,9 +86,10 @@
             android:text="Confirmação de senha" />
 
         <EditText
-            android:id="@+id/input_confirmacao_senha"
+            android:id="@+id/input_mp_confirmacao_senha"
             android:layout_width="300dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
     </LinearLayout>
 
     <LinearLayout
@@ -106,7 +108,7 @@
             android:text="Missão da ONG" />
 
         <EditText
-            android:id="@+id/input_missao_ong"
+            android:id="@+id/input_mp_missao_ong"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -127,7 +129,7 @@
             android:text="Descrição" />
 
         <EditText
-            android:id="@+id/input_descricao"
+            android:id="@+id/input_mp_descricao"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -148,7 +150,7 @@
             android:text="Missão da ONG" />
 
         <EditText
-            android:id="@+id/input_causa"
+            android:id="@+id/input_mp_causa"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -163,7 +165,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button_atualizar"
+            android:id="@+id/button_mp_atualizar"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             tools:text="Atualizar" />
