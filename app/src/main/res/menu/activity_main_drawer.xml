@@ -24,5 +24,10 @@
             android:id="@+id/nav_doacoes_recebidas"
             android:icon="@drawable/ic_doaces_recebidas"
             android:title="Doações Recebidas" />
+
+        <item
+            android:id="@+id/nav_doacoes_realizadas"
+            android:icon="@drawable/ic_doacoes_realizadas"
+            android:title="Doações Realizadas" />
     </group>
 </menu>
