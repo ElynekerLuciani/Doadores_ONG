@@ -5,14 +5,25 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class LancarSaidaViewModel extends ViewModel {
-    private MutableLiveData<String> mText;
+    private LancarSaidaModel lancarSaidaModel;
 
     public LancarSaidaViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is lançar saída fragment");
+        this.lancarSaidaModel = new LancarSaidaModel();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LancarSaidaModel getLancarSaidaModel() {
+        return lancarSaidaModel;
+    }
+
+    public void updateValor(double valor){
+        this.lancarSaidaModel.setValor(valor);
+    }
+
+    public void updateTipo(String tipo){
+        this.lancarSaidaModel.setTipo(tipo);
+    }
+
+    public void updateData(String data){
+        this.lancarSaidaModel.setData(data);
     }
 }

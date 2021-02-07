@@ -21,9 +21,10 @@
             android:text="Valor (R$)" />
 
         <EditText
-            android:id="@+id/input_valor"
+            android:id="@+id/input_ls_valor"
             android:layout_width="300dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
     </LinearLayout>
 
     <LinearLayout
@@ -42,7 +43,7 @@
             android:text="Tipo" />
 
         <EditText
-            android:id="@+id/input_tipo"
+            android:id="@+id/input_ls_tipo"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -60,12 +61,13 @@
             android:id="@+id/label_data"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Data" />
+            android:text="Data (ex: 01/01/2021)" />
 
         <EditText
-            android:id="@+id/input_data"
+            android:id="@+id/input_ls_data"
             android:layout_width="300dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="date"/>
     </LinearLayout>
 
     <LinearLayout
@@ -78,7 +80,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button_atualizar"
+            android:id="@+id/button_ls_atualizar"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             tools:text="Atualizar" />
