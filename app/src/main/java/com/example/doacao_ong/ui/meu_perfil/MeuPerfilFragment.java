@@ -17,7 +17,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.doacao_ong.R;
-import com.example.doacao_ong.ui.gallery.GalleryViewModel;
 
 public class MeuPerfilFragment extends Fragment {
 

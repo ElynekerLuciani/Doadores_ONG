@@ -23,4 +23,10 @@
         android:label="Lançar Saída"
         tools:layout="@layout/lancar_saida_fragment" />
 
+    <fragment
+        android:id="@+id/nav_doacoes_recebidas"
+        android:name="com.example.doacao_ong.ui.doaces_recebidas.DoacesRecebidasFragment"
+        android:label="Doações Recebidas"
+        tools:layout="@layout/doaces_recebidas_fragment" />
+
 </navigation>
