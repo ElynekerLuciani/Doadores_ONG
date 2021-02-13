@@ -1,4 +1,4 @@
-package com.example.doacao_ong;
+package com.example.doacao_ong.ui.usuario;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.doacao_ong.R;
 
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;

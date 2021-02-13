@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="20dp"
     android:paddingTop="10dp"
-    tools:context=".ui.doacoes_realizadas.DaocoesRealizadasFragment">
+    tools:context=".ui.admin.doacoes_recebidas.DoacoesRecebidasFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/doacoes_recebidas_1"
@@ -40,10 +40,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/doacoes_recebidas_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/doacoes_recebidas_1"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -72,10 +72,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/doacoes_recebidas_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/doacoes_recebidas_2"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -104,10 +104,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/doacoes_recebidas_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/doacoes_recebidas_3"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"

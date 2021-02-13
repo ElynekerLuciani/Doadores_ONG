@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.meu_perfil;
+package com.example.doacao_ong.ui.admin.meu_perfil;
 
 public class MeuPerfilModel {
     private String nome;

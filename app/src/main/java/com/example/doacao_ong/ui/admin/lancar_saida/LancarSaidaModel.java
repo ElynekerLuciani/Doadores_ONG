@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.lancar_saida;
+package com.example.doacao_ong.ui.admin.lancar_saida;
 
 public class LancarSaidaModel {
     private double valor;

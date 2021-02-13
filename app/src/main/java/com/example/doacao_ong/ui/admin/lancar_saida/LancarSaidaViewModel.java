@@ -1,7 +1,5 @@
-package com.example.doacao_ong.ui.lancar_saida;
+package com.example.doacao_ong.ui.admin.lancar_saida;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class LancarSaidaViewModel extends ViewModel {

@@ -1,4 +1,4 @@
-package com.example.doacao_ong;
+package com.example.doacao_ong.ui.usuario;
 
 import android.os.Bundle;
 
@@ -8,17 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import com.example.doacao_ong.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DoarFragment#newInstance} factory method to
+ * Use the {@link DoacaoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DoarFragment extends Fragment {
+public class DoacaoFragment extends Fragment {
 
-    EditText edtONG;
-    EditText edtValor;
-    EditText edtData;
+    ArrayList<Doacao> listaDoacao;
+    ListView listViewDoacao;
+    MinhasDoacoesAdapter adapter;
+    EditText editTextCodigo;
+    Doacao doacao;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +36,7 @@ public class DoarFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public DoarFragment() {
+    public DoacaoFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +46,11 @@ public class DoarFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DoarFragment.
+     * @return A new instance of fragment DoacaoFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DoarFragment newInstance(String param1, String param2) {
-        DoarFragment fragment = new DoarFragment();
+    public static DoacaoFragment newInstance(String param1, String param2) {
+        DoacaoFragment fragment = new DoacaoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,18 +65,12 @@ public class DoarFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        
-
-        
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_doar, container, false);
+        return inflater.inflate(R.layout.fragment_doacao, container, false);
     }
 }

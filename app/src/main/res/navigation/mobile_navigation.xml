@@ -7,32 +7,38 @@
 
     <fragment
         android:id="@+id/nav_dashboard"
-        android:name="com.example.doacao_ong.ui.dashboard.DashboardFragment"
+        android:name="com.example.doacao_ong.ui.admin.dashboard.DashboardFragment"
         android:label="Dashboard"
         tools:layout="@layout/dashboard_fragment" />
 
     <fragment
         android:id="@+id/nav_meu_perfil"
-        android:name="com.example.doacao_ong.ui.meu_perfil.MeuPerfilFragment"
+        android:name="com.example.doacao_ong.ui.admin.meu_perfil.MeuPerfilFragment"
         android:label="Meu Perfil"
         tools:layout="@layout/meu_perfil_fragment" />
 
     <fragment
         android:id="@+id/nav_lancar_saida"
-        android:name="com.example.doacao_ong.ui.lancar_saida.LancarSaidaFragment"
+        android:name="com.example.doacao_ong.ui.admin.lancar_saida.LancarSaidaFragment"
         android:label="Lançar Saída"
         tools:layout="@layout/lancar_saida_fragment" />
 
     <fragment
         android:id="@+id/nav_doacoes_recebidas"
-        android:name="com.example.doacao_ong.ui.doaces_recebidas.DoacesRecebidasFragment"
+        android:name="com.example.doacao_ong.ui.admin.doacoes_recebidas.DoacoesRecebidasFragment"
         android:label="Doações Recebidas"
-        tools:layout="@layout/doaces_recebidas_fragment" />
+        tools:layout="@layout/doacoes_recebidas_fragment" />
 
     <fragment
         android:id="@+id/nav_doacoes_realizadas"
-        android:name="com.example.doacao_ong.ui.doacoes_realizadas.DaocoesRealizadasFragment"
+        android:name="com.example.doacao_ong.ui.admin.doacoes_realizadas.DoacoesRealizadasFragment"
         android:label="Doações Realizadas"
-        tools:layout="@layout/daocoes_realizadas_fragment" />
+        tools:layout="@layout/doacoes_realizadas_fragment" />
+
+    <fragment
+        android:id="@+id/nav_usuario_doacao"
+        android:name="com.example.doacao_ong.ui.usuario.DoacaoFragment"
+        android:label="Doação"
+        tools:layout="@layout/fragment_doacao" />
 
 </navigation>

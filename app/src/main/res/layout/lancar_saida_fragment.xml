@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.lancar_saida.LancarSaidaFragment">
+    tools:context=".ui.admin.lancar_saida.LancarSaidaFragment">
 
     <LinearLayout
         android:id="@+id/layout_valor"

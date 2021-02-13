@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.doaces_recebidas;
+package com.example.doacao_ong.ui.admin.doacoes_recebidas;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -14,24 +14,24 @@ import android.view.ViewGroup;
 
 import com.example.doacao_ong.R;
 
-public class DoacesRecebidasFragment extends Fragment {
+public class DoacoesRecebidasFragment extends Fragment {
 
-    private DoacesRecebidasViewModel mViewModel;
+    private DoacoesRecebidasViewModel mViewModel;
 
-    public static DoacesRecebidasFragment newInstance() {
-        return new DoacesRecebidasFragment();
+    public static DoacoesRecebidasFragment newInstance() {
+        return new DoacoesRecebidasFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.doaces_recebidas_fragment, container, false);
+        return inflater.inflate(R.layout.doacoes_recebidas_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(DoacesRecebidasViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(DoacoesRecebidasViewModel.class);
         // TODO: Use the ViewModel
     }
 

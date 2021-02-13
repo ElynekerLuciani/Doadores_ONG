@@ -1,4 +1,4 @@
-package com.example.doacao_ong;
+package com.example.doacao_ong.ui.usuario;
 
 public class Doacao {
 

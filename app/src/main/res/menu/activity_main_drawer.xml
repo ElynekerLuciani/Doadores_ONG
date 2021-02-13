@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/menu_admin"
+        android:checkableBehavior="single"
+        android:visible="true">
 
         <item
             android:id="@+id/nav_dashboard"
@@ -29,5 +32,16 @@
             android:id="@+id/nav_doacoes_realizadas"
             android:icon="@drawable/ic_doacoes_realizadas"
             android:title="Doações Realizadas" />
+    </group>
+
+    <group
+        android:id="@+id/menu_usuario"
+        android:checkableBehavior="single"
+        android:visible="false">
+
+        <item
+            android:id="@+id/nav_usuario_doacao"
+            android:icon="@drawable/ic_menu_dashboard"
+            android:title="Doação" />
     </group>
 </menu>
