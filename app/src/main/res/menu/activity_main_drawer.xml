@@ -4,17 +4,30 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_menu_dashboard"
+            android:title="Dashboard" />
+
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_meu_perfil"
+            android:icon="@drawable/ic_menu_meu_perfil"
+            android:title="Meu perfil" />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_lancar_saida"
+            android:icon="@drawable/ic_menu_lancar_saida"
+            android:title="Lançar saída" />
+
+        <item
+            android:id="@+id/nav_doacoes_recebidas"
+            android:icon="@drawable/ic_doaces_recebidas"
+            android:title="Doações Recebidas" />
+
+        <item
+            android:id="@+id/nav_doacoes_realizadas"
+            android:icon="@drawable/ic_doacoes_realizadas"
+            android:title="Doações Realizadas" />
     </group>
 </menu>
