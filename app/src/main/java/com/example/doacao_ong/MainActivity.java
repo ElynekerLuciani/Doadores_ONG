@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
 
 //        CONFIGURANDO MENU DO DRAWER
-        navigationView.getMenu().setGroupVisible(R.id.menu_usuario, true);
-        navigationView.getMenu().setGroupVisible(R.id.menu_admin, false);
+        navigationView.getMenu().setGroupVisible(R.id.menu_usuario, false);
+        navigationView.getMenu().setGroupVisible(R.id.menu_admin, true);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
@@ -42,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
 //        CONFIGURANDO TELA INICIAL DO DRAWER
         NavGraph navGraph = navController.getNavInflater().inflate(R.navigation.mobile_navigation);
-        navGraph.setStartDestination(R.id.nav_usuario_doacao);
+//        IF MENU_USUARIO === TRUE
+        //        navGraph.setStartDestination(R.id.nav_usuario_doacao);
+//        IF MENU_ADMIN === TRUE
+        navGraph.setStartDestination(R.id.nav_dashboard);
         navController.setGraph(navGraph);
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
