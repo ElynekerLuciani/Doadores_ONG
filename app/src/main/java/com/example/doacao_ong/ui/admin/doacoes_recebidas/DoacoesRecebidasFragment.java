@@ -13,14 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.doacao_ong.R;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class DoacoesRecebidasFragment extends Fragment {
 
@@ -48,16 +45,16 @@ public class DoacoesRecebidasFragment extends Fragment {
     }
 
     private void configListView(View view) {
-        DoacoesRecebidasModel doacao1 = new DoacoesRecebidasModel("Wilker", "01/01/2021", "50");
-        DoacoesRecebidasModel doacao2 = new DoacoesRecebidasModel("Bruno", "01/01/2021", "50");
-        DoacoesRecebidasModel doacao3 = new DoacoesRecebidasModel("João", "01/01/2021", "50");
+        DoacoesRealizadasModel doacao1 = new DoacoesRealizadasModel("Wilker", "01/01/2021", "50");
+        DoacoesRealizadasModel doacao2 = new DoacoesRealizadasModel("Bruno", "01/01/2021", "50");
+        DoacoesRealizadasModel doacao3 = new DoacoesRealizadasModel("João", "01/01/2021", "50");
 
-        ArrayList<DoacoesRecebidasModel> doacoes = new ArrayList<>();
+        ArrayList<DoacoesRealizadasModel> doacoes = new ArrayList<>();
         doacoes.add(doacao1);
         doacoes.add(doacao2);
         doacoes.add(doacao3);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_lista_doacoes);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_lista_doacoes_recebidas);
         DoacoesRecebidasRVAdapter recyclerAdapter = new DoacoesRecebidasRVAdapter(getActivity(), doacoes);
         RecyclerView.LayoutManager recyclerManager = new LinearLayoutManager(getActivity());
 

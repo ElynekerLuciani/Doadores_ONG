@@ -6,7 +6,7 @@
     tools:context=".ui.admin.doacoes_recebidas.DoacoesRecebidasFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_lista_doacoes"
+        android:id="@+id/recycler_lista_doacoes_recebidas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"

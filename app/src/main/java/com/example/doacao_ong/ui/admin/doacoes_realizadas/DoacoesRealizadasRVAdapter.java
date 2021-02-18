@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.admin.doacoes_recebidas;
+package com.example.doacao_ong.ui.admin.doacoes_realizadas;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,31 +14,30 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesRecebidasRVAdapter.ViewHolder> {
-
-    private ArrayList<DoacoesRealizadasModel> doacoesRecebidas;
+public class DoacoesRealizadasRVAdapter extends RecyclerView.Adapter<DoacoesRealizadasRVAdapter.ViewHolder> {
+    private ArrayList<DoacoesRealizadasModel> doacoesRealizadas;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
-    DoacoesRecebidasRVAdapter(Context context, ArrayList<DoacoesRealizadasModel> doacoesRecebidas) {
+    DoacoesRealizadasRVAdapter(Context context, ArrayList<DoacoesRealizadasModel> doacoesRealizadas) {
         this.mInflater = LayoutInflater.from(context);
-        this.doacoesRecebidas = doacoesRecebidas;
+        this.doacoesRealizadas = doacoesRealizadas;
     }
 
     // inflates the row layout from xml when needed
     @NotNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.doacoes_recebidas_row, parent, false);
-        return new ViewHolder(view);
+    public DoacoesRealizadasRVAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = mInflater.inflate(R.layout.doacoes_realizadas_row, parent, false);
+        return new DoacoesRealizadasRVAdapter.ViewHolder(view);
     }
 
     // binds the data to the TextView in each row
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        DoacoesRealizadasModel doacao = doacoesRecebidas.get(position);
+    public void onBindViewHolder(DoacoesRealizadasRVAdapter.ViewHolder holder, int position) {
+        DoacoesRealizadasModel doacao = doacoesRealizadas.get(position);
 
-        holder.textViewNome.setText(doacao.getNomeDoador());
+        holder.textViewNome.setText(doacao.getNome());
         holder.textViewData.setText(doacao.getData());
         holder.textViewValor.setText(doacao.getValor());
     }
@@ -46,7 +45,7 @@ public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesReceb
     // total number of rows
     @Override
     public int getItemCount() {
-        return doacoesRecebidas.size();
+        return doacoesRealizadas.size();
     }
 
 
@@ -57,9 +56,9 @@ public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesReceb
         ViewHolder(View itemView) {
             super(itemView);
 
-            textViewNome = itemView.findViewById(R.id.doacao_recebida_row_nome);
-            textViewData = itemView.findViewById(R.id.doacao_recebida_row_data);
-            textViewValor = itemView.findViewById(R.id.doacao_recebida_row_valor);
+            textViewNome = itemView.findViewById(R.id.doacao_realizada_row_nome);
+            textViewData = itemView.findViewById(R.id.doacao_realizada_row_data);
+            textViewValor = itemView.findViewById(R.id.doacao_realizada_row_valor);
 
             itemView.setOnClickListener(this);
         }
@@ -80,4 +79,3 @@ public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesReceb
         void onItemClick(View view, int position);
     }
 }
-
