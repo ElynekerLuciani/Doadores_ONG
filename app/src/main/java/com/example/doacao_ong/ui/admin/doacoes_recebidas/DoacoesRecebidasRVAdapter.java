@@ -16,11 +16,11 @@ import java.util.ArrayList;
 
 public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesRecebidasRVAdapter.ViewHolder> {
 
-    private ArrayList<DoacoesRealizadasModel> doacoesRecebidas;
+    private ArrayList<DoacoesRecebidasModel> doacoesRecebidas;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
-    DoacoesRecebidasRVAdapter(Context context, ArrayList<DoacoesRealizadasModel> doacoesRecebidas) {
+    DoacoesRecebidasRVAdapter(Context context, ArrayList<DoacoesRecebidasModel> doacoesRecebidas) {
         this.mInflater = LayoutInflater.from(context);
         this.doacoesRecebidas = doacoesRecebidas;
     }
@@ -36,7 +36,7 @@ public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesReceb
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        DoacoesRealizadasModel doacao = doacoesRecebidas.get(position);
+        DoacoesRecebidasModel doacao = doacoesRecebidas.get(position);
 
         holder.textViewNome.setText(doacao.getNomeDoador());
         holder.textViewData.setText(doacao.getData());

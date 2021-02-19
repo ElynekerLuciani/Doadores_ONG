@@ -45,11 +45,11 @@ public class DoacoesRecebidasFragment extends Fragment {
     }
 
     private void configListView(View view) {
-        DoacoesRealizadasModel doacao1 = new DoacoesRealizadasModel("Wilker", "01/01/2021", "50");
-        DoacoesRealizadasModel doacao2 = new DoacoesRealizadasModel("Bruno", "01/01/2021", "50");
-        DoacoesRealizadasModel doacao3 = new DoacoesRealizadasModel("João", "01/01/2021", "50");
+        DoacoesRecebidasModel doacao1 = new DoacoesRecebidasModel("Wilker", "01/01/2021", "50");
+        DoacoesRecebidasModel doacao2 = new DoacoesRecebidasModel("Bruno", "01/01/2021", "50");
+        DoacoesRecebidasModel doacao3 = new DoacoesRecebidasModel("João", "01/01/2021", "50");
 
-        ArrayList<DoacoesRealizadasModel> doacoes = new ArrayList<>();
+        ArrayList<DoacoesRecebidasModel> doacoes = new ArrayList<>();
         doacoes.add(doacao1);
         doacoes.add(doacao2);
         doacoes.add(doacao3);

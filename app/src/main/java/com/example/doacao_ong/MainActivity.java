@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 //        CONFIGURANDO TELA INICIAL DO DRAWER
         NavGraph navGraph = navController.getNavInflater().inflate(R.navigation.mobile_navigation);
 //        IF MENU_USUARIO === TRUE
-        //        navGraph.setStartDestination(R.id.nav_usuario_doacao);
+//        navGraph.setStartDestination(R.id.nav_usuario_doacao);
 //        IF MENU_ADMIN === TRUE
         navGraph.setStartDestination(R.id.nav_dashboard);
         navController.setGraph(navGraph);

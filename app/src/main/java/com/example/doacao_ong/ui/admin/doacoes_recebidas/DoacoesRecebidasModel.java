@@ -1,13 +1,13 @@
 package com.example.doacao_ong.ui.admin.doacoes_recebidas;
 
-public class DoacoesRealizadasModel {
+public class DoacoesRecebidasModel {
     private String nomeDoador;
     private String data;
     private String valor;
 
-    public DoacoesRealizadasModel(){}
+    public DoacoesRecebidasModel(){}
 
-    public DoacoesRealizadasModel(String nomeDoador, String data, String valor){
+    public DoacoesRecebidasModel(String nomeDoador, String data, String valor){
         this.nomeDoador = nomeDoador;
         this.data = data;
         this.valor = valor;
