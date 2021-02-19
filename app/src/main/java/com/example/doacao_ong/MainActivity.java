@@ -23,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String tipo = "admin";
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            tipo = extras.getString("tipo");
+        } else {
+            System.out.println("Extras é NULL");
+        }
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,8 +39,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
 
 //        CONFIGURANDO MENU DO DRAWER
-        navigationView.getMenu().setGroupVisible(R.id.menu_usuario, false);
-        navigationView.getMenu().setGroupVisible(R.id.menu_admin, true);
+        if (tipo.equals("usuario")) {
+            navigationView.getMenu().setGroupVisible(R.id.menu_usuario, true);
+            navigationView.getMenu().setGroupVisible(R.id.menu_admin, false);
+        } else {
+            navigationView.getMenu().setGroupVisible(R.id.menu_usuario, false);
+            navigationView.getMenu().setGroupVisible(R.id.menu_admin, true);
+        }
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
@@ -42,10 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
 //        CONFIGURANDO TELA INICIAL DO DRAWER
         NavGraph navGraph = navController.getNavInflater().inflate(R.navigation.mobile_navigation);
-//        IF MENU_USUARIO === TRUE
-//        navGraph.setStartDestination(R.id.nav_usuario_doacao);
-//        IF MENU_ADMIN === TRUE
-        navGraph.setStartDestination(R.id.nav_dashboard);
+
+        if (tipo.equals("usuario")) {
+            navGraph.setStartDestination(R.id.nav_usuario_doacao);
+        } else {
+            navGraph.setStartDestination(R.id.nav_dashboard);
+        }
+
         navController.setGraph(navGraph);
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
