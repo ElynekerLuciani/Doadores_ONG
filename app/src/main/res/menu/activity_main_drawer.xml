@@ -43,5 +43,16 @@
             android:id="@+id/nav_usuario_doacao"
             android:icon="@drawable/ic_menu_dashboard"
             android:title="Doação" />
+
+        <item
+            android:id="@+id/nav_usuario_doar"
+            android:icon="@drawable/ic_menu_dashboard"
+            android:title="Doar" />
+
+        <item
+            android:id="@+id/nav_usuario_perfil"
+            android:icon="@drawable/ic_menu_dashboard"
+            android:title="Perfil" />
+
     </group>
 </menu>
