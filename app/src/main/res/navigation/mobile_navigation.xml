@@ -41,4 +41,16 @@
         android:label="Doação"
         tools:layout="@layout/fragment_doacao" />
 
+    <fragment
+        android:id="@+id/nav_usuario_doar"
+        android:name="com.example.doacao_ong.ui.usuario.DoarFragment"
+        android:label="Doar"
+        tools:layout="@layout/fragment_doar" />
+
+    <fragment
+        android:id="@+id/nav_usuario_perfil"
+        android:name="com.example.doacao_ong.ui.usuario.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" />
+
 </navigation>

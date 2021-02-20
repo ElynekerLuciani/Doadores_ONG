@@ -1,76 +1,95 @@
 package com.example.doacao_ong.ui.usuario;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.doacao_ong.R;
+import com.example.doacao_ong.ui.admin.doacoes_recebidas.DoacoesRecebidasRVAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DoacaoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class DoacaoFragment extends Fragment {
 
-    ArrayList<Doacao> listaDoacao;
+    ArrayList<DoacaoModel> listaDoacao;
     ListView listViewDoacao;
     MinhasDoacoesAdapter adapter;
     EditText editTextCodigo;
-    Doacao doacao;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public DoacaoFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DoacaoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DoacaoFragment newInstance(String param1, String param2) {
-        DoacaoFragment fragment = new DoacaoFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_doacao, container, false);
+//        View rootView = inflater.inflate(R.layout.adapter_view_layout, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_doacao, container, false);
+
+        DoacaoModel doacao1 = new DoacaoModel("19/01/2021", "Sentinela", "100.00");
+        DoacaoModel doacao2 = new DoacaoModel("18/01/2021", "Popular", "50.00");
+        DoacaoModel doacao3 = new DoacaoModel("17/01/2021", "Farias", "120.00");
+
+        listaDoacao = new ArrayList<>();
+        listaDoacao.add(doacao1);
+        listaDoacao.add(doacao2);
+        listaDoacao.add(doacao3);
+
+        // Aqui você instancia sua ListView
+        ListView carsList = (ListView) rootView.findViewById(R.id.listView);
+        ArrayList<DoacaoModel> cars = listaDoacao;
+
+        MinhasDoacoesAdapter carsAdapter = new MinhasDoacoesAdapter(this.getActivity(), R.layout.adapter_view_layout, cars);
+        carsList.setAdapter(carsAdapter);
+
+
+//        configListView(rootView);
+
+        return rootView;
     }
+
+//    @SuppressLint("CutPasteId")
+//    private void configListView(View rootView) {
+//        DoacaoModel doacao1 = new DoacaoModel("19/01/2021", "Sentinela", "100.00");
+//        DoacaoModel doacao2 = new DoacaoModel("18/01/2021", "Popular", "50.00");
+//        DoacaoModel doacao3 = new DoacaoModel("17/01/2021", "Farias", "120.00");
+//
+//        listaDoacao = new ArrayList<>();
+//        listaDoacao.add(doacao1);
+//        listaDoacao.add(doacao2);
+//        listaDoacao.add(doacao3);
+//
+//        RecyclerView recyclerView = rootView.findViewById(R.id.listView);
+//        adapter = new MinhasDoacoesAdapter(getActivity(), listaDoacao);
+//        RecyclerView.LayoutManager recLayoutManager = new LinearLayoutManager(getActivity());
+//
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(recLayoutManager);
+//
+//        adapter.setClickListener(new DoacoesRecebidasRVAdapter.ItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                Toast.makeText(getActivity(), "OK",Toast.LENGTH_LONG).show();
+//            }
+//        });
+//
+//        recyclerView.setAdapter(adapter);
+//
+//
+//
+//
+//
+//    }
 }

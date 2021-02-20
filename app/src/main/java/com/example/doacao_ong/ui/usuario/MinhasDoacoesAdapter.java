@@ -10,19 +10,81 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doacao_ong.R;
+import com.example.doacao_ong.ui.admin.doacoes_recebidas.DoacoesRecebidasRVAdapter;
 
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class MinhasDoacoesAdapter extends ArrayAdapter<Doacao> {
+public class MinhasDoacoesAdapter extends ArrayAdapter<DoacaoModel> {
+
+//    private ArrayList<DoacaoModel> doacoes;
+//    private LayoutInflater layoutInflater;
+//    private DoacoesRecebidasRVAdapter.ItemClickListener itemClickListener;
+//
+//    public MinhasDoacoesAdapter(Context context, ArrayList<DoacaoModel> doacaoModels) {
+//        this.layoutInflater = LayoutInflater.from(context);
+//        this.doacoes = doacaoModels;
+//    }
+//
+//    @NonNull
+//    @Override
+//    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//        return null;
+//    }
+//
+//    @Override
+//    public void onBindViewHolder(ViewHolder holder, int position) {
+//        DoacaoModel dm = doacoes.get(position);
+//
+//        holder.textViewOng.setText(dm.getOng());
+//        holder.textViewData.setText(dm.getData());
+//        holder.textViewValor.setText(dm.getValor());
+//
+//    }
+//
+//    @Override
+//    public int getItemCount() {
+//        return 0;
+//    }
+//
+//    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+//        TextView textViewOng, textViewData, textViewValor;
+//
+//        ViewHolder(View itemView) {
+//            super(itemView);
+//
+//            textViewOng = itemView.findViewById(R.id.textONG);
+//            textViewData = itemView.findViewById(R.id.textData);
+//            textViewValor = itemView.findViewById(R.id.textValor);
+//
+//            itemView.setOnClickListener(this);
+//        }
+//
+//        @Override
+//        public void onClick(View view) {
+//            if (itemClickListener != null) itemClickListener.onItemClick(view, getAdapterPosition());
+//        }
+//    }
+//
+//    // allows clicks events to be caught
+//    void setClickListener(DoacoesRecebidasRVAdapter.ItemClickListener itemClickListener) {
+//        this.itemClickListener = itemClickListener;
+//    }
+//
+//    // parent activity will implement this method to respond to click events
+//    public interface ItemClickListener {
+//        void onItemClick(View view, int position);
+//    }
+
     private final Context context;
     private final int auxResource;
 
-    public MinhasDoacoesAdapter(@NonNls Context context, int resource, @NotNull ArrayList<Doacao> objects) {
+    public MinhasDoacoesAdapter(@NonNls Context context, int resource, @NotNull ArrayList<DoacaoModel> objects) {
         super(context, resource, objects);
         this.context = context;
         auxResource = resource;
@@ -30,12 +92,12 @@ public class MinhasDoacoesAdapter extends ArrayAdapter<Doacao> {
 
     @SuppressLint("ViewHolder")
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        int id = getItem(position).getId();
+
         String ong = getItem(position).getOng();
         String valor = getItem(position).getValor();
         String data = getItem(position).getData();
 
-        Doacao doacao = new Doacao(ong, valor, data);
+        DoacaoModel doacao = new DoacaoModel(ong, valor, data);
         LayoutInflater inflater = LayoutInflater.from(context);
         convertView = inflater.inflate(auxResource, parent, false);
 
