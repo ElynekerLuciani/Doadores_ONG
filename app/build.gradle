@@ -46,5 +46,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    
+
+    // FIREBASE
+    implementation platform('com.google.firebase:firebase-bom:26.8.0')
+
+    implementation 'com.google.firebase:firebase-firestore'
 }
+
+apply plugin: 'com.google.gms.google-services'
