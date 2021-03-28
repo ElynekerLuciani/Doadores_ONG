@@ -13,6 +13,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        multiDexEnabled true
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -46,6 +48,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // DEX
+    implementation 'com.android.support:multidex:1.0.3'
 
     // FIREBASE
     implementation platform('com.google.firebase:firebase-bom:26.8.0')
