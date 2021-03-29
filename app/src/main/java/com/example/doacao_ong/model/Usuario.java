@@ -1,11 +1,15 @@
-package com.example.doacao_ong.data.model;
+package com.example.doacao_ong.model;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
 import com.example.doacao_ong.ui.config.UsuarioFirebase;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
-import java.io.Serializable;
 import java.util.HashMap;
 
 public class Usuario {
@@ -16,7 +20,8 @@ public class Usuario {
     private String senha;
     private String foto;
 
-    public Usuario() {}
+    public Usuario() {
+    }
 
     public void salvar() {
         DatabaseReference databaseReference = ConfiguracaoFirebase.getFirebaseDatabase();
@@ -25,6 +30,7 @@ public class Usuario {
     }
 
     public void atualizar() {
+        final boolean[] resultado = {false};
         String idUsuario = UsuarioFirebase.getIdentificadorUsuario();
         DatabaseReference firebaseDatabase = ConfiguracaoFirebase.getFirebaseDatabase();
 
@@ -42,14 +48,18 @@ public class Usuario {
         usuarioMap.put("email", getEmail());
         usuarioMap.put("tipo", getTipo());
         usuarioMap.put("nome", getNome());
-        usuarioMap.put("foto", getFoto());
+//        usuarioMap.put("foto", getFoto());
         return usuarioMap;
     }
 
     @Exclude
-    public String getIdUser() { return idUser; }
+    public String getIdUser() {
+        return idUser;
+    }
 
-    public void setIdUser(String idUser) { this.idUser = idUser; }
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
+    }
 
     public String getNome() {
         return nome;
@@ -84,8 +94,12 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getFoto() { return foto; }
+    public String getFoto() {
+        return foto;
+    }
 
-    public void setFoto(String foto) { this.foto = foto; }
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
 
 }

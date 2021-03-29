@@ -1,6 +1,6 @@
-package com.example.doacao_ong.ui.admin.lancar_saida;
+package com.example.doacao_ong.model;
 
-public class LancarSaidaModel {
+public class Despesa {
     private double valor;
     private String tipo;
     private String data;

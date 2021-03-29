@@ -12,9 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doacao_ong.LoadingActivity;
-import com.example.doacao_ong.MainActivity;
 import com.example.doacao_ong.R;
-import com.example.doacao_ong.data.model.Usuario;
+import com.example.doacao_ong.model.Usuario;
 import com.example.doacao_ong.ui.cadastro.CadastroActivity;
 import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
 import com.google.android.gms.tasks.OnCompleteListener;

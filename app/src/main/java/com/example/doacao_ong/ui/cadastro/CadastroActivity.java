@@ -14,8 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.doacao_ong.R;
-import com.example.doacao_ong.data.model.Usuario;
-import com.example.doacao_ong.ui.config.Base64Custom;
+import com.example.doacao_ong.model.Usuario;
 import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
 import com.example.doacao_ong.ui.config.UsuarioFirebase;
 import com.example.doacao_ong.ui.login.LoginActivity;

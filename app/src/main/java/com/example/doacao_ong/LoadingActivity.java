@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.doacao_ong.data.model.Usuario;
+import com.example.doacao_ong.model.Usuario;
 import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
 import com.example.doacao_ong.ui.config.UsuarioFirebase;
 import com.google.android.gms.tasks.OnSuccessListener;

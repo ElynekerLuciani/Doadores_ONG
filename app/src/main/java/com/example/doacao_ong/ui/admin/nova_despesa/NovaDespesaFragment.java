@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.admin.lancar_saida;
+package com.example.doacao_ong.ui.admin.nova_despesa;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -15,9 +15,9 @@ import android.widget.EditText;
 
 import com.example.doacao_ong.R;
 
-public class LancarSaidaFragment extends Fragment {
+public class NovaDespesaFragment extends Fragment {
 
-    private LancarSaidaViewModel lancarSaidaViewModel;
+    private NovaDespesaViewModel novaDespesaViewModel;
     private Button buttonAtualizar;
     private EditText editTextValor;
     private EditText editTextTipo;
@@ -25,23 +25,22 @@ public class LancarSaidaFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        lancarSaidaViewModel =
-                new ViewModelProvider(this).get(LancarSaidaViewModel.class);
+        novaDespesaViewModel =
+                new ViewModelProvider(this).get(NovaDespesaViewModel.class);
         View root = inflater.inflate(R.layout.lancar_saida_fragment, container, false);
 
-        editTextValor = root.findViewById(R.id.input_ls_valor);
         editTextTipo = root.findViewById(R.id.input_ls_tipo);
         editTextData = root.findViewById(R.id.input_ls_data);
-
+        editTextValor = root.findViewById(R.id.input_ls_valor);
         buttonAtualizar = root.findViewById(R.id.button_ls_atualizar);
-        buttonAtualizar.setText("Atualizar");
+
 
         buttonAtualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lancarSaidaViewModel.updateValor(Double.parseDouble(editTextValor.getText().toString()));
-                lancarSaidaViewModel.updateTipo(editTextTipo.getText().toString());
-                lancarSaidaViewModel.updateData(editTextData.getText().toString());
+                novaDespesaViewModel.updateValor(Double.parseDouble(editTextValor.getText().toString()));
+                novaDespesaViewModel.updateTipo(editTextTipo.getText().toString());
+                novaDespesaViewModel.updateData(editTextData.getText().toString());
 
                 clearInputs();
             }

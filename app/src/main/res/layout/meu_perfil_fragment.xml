@@ -6,169 +6,151 @@
     android:layout_height="match_parent"
     tools:context=".ui.admin.meu_perfil.MeuPerfilFragment">
 
-    <LinearLayout
-        android:id="@+id/layout_nome"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/meu_perfil_label_nome"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_alignStart="@+id/meu_perfil_input_nome"
+        android:layout_alignLeft="@+id/meu_perfil_input_nome"
+        android:layout_marginTop="24dp"
+        android:text="Nome" />
 
-        <TextView
-            android:id="@+id/label_nome"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Nome" />
-
-        <EditText
-            android:id="@+id/input_mp_nome"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_email"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/meu_perfil_input_nome"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout_nome"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_below="@+id/meu_perfil_label_nome"
+        android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:id="@+id/label_email"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Email" />
-
-        <EditText
-            android:id="@+id/input_mp_email"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_senha"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/meu_perfil_label_missao_ong"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout_email"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_below="@+id/meu_perfil_input_nome"
+        android:layout_alignStart="@+id/meu_perfil_input_missao_ong"
+        android:layout_alignLeft="@+id/meu_perfil_input_missao_ong"
+        android:layout_marginTop="16dp"
+        android:text="Missão da ONG" />
 
-        <TextView
-            android:id="@+id/label_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Senha" />
-
-        <EditText
-            android:id="@+id/input_mp_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_confirmacao_senha"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/meu_perfil_input_missao_ong"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout_senha"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_below="@+id/meu_perfil_label_missao_ong"
+        android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:id="@+id/label_confirmacao_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Confirmação de senha" />
-
-        <EditText
-            android:id="@+id/input_mp_confirmacao_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_missao_ong"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/meu_perfil_label_causa_ong"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout_confirmacao_senha"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_below="@+id/meu_perfil_input_missao_ong"
+        android:layout_alignStart="@+id/meu_perfil_input_missao_ong"
+        android:layout_alignLeft="@+id/meu_perfil_input_missao_ong"
+        android:layout_marginTop="16dp"
+        android:text="Causa da ONG" />
 
-        <TextView
-            android:id="@+id/label_missao_ong"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Missão da ONG" />
-
-        <EditText
-            android:id="@+id/input_mp_missao_ong"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_descricao"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/meu_perfil_input_causa_ong"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout_missao_ong"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_below="@+id/meu_perfil_label_causa_ong"
+        android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:id="@+id/label_descricao"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Descrição" />
-
-        <EditText
-            android:id="@+id/input_mp_descricao"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_causa"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/meu_perfil_label_descricao_ong"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout_descricao"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_below="@+id/meu_perfil_input_causa_ong"
+        android:layout_alignStart="@+id/meu_perfil_input_missao_ong"
+        android:layout_alignLeft="@+id/meu_perfil_input_missao_ong"
+        android:layout_marginTop="16dp"
+        android:text="Descrição da ONG" />
 
-        <TextView
-            android:id="@+id/label_causa"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Missão da ONG" />
-
-        <EditText
-            android:id="@+id/input_mp_causa"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_button_atualizar"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/meu_perfil_input_descricao_ong"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout_causa"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_below="@+id/meu_perfil_label_descricao_ong"
+        android:layout_centerHorizontal="true" />
 
-        <Button
-            android:id="@+id/button_mp_atualizar"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            tools:text="Atualizar" />
-    </LinearLayout>
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/label_email"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Email" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/input_mp_email"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/label_senha"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Senha" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/input_mp_senha"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:inputType="textPassword" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/label_confirmacao_senha"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Confirmação de senha" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/input_mp_confirmacao_senha"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:inputType="textPassword" />-->
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/label_missao_ong"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Missão da ONG" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/input_mp_missao_ong"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/label_descricao"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Descrição" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/input_mp_descricao"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/label_causa"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Missão da ONG" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/input_mp_causa"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="wrap_content" />-->
+
+    <Button
+        android:id="@+id/meu_perfil_submit_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/meu_perfil_input_descricao_ong"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Atualizar" />
 
 
 </RelativeLayout>

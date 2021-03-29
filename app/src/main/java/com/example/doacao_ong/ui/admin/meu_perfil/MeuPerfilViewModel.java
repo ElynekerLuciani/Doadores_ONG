@@ -1,43 +1,39 @@
 package com.example.doacao_ong.ui.admin.meu_perfil;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.doacao_ong.model.Ong;
+import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
+import com.example.doacao_ong.ui.config.UsuarioFirebase;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+
 public class MeuPerfilViewModel extends ViewModel {
-   private MeuPerfilModel meuPerfilModel;
+    private MutableLiveData<Ong> ongLiveData;
 
     public MeuPerfilViewModel() {
-        this.meuPerfilModel = new MeuPerfilModel();
+        this.ongLiveData = new MutableLiveData<>();
     }
 
-    public MeuPerfilModel getMeuPerfilModel() {
-        return meuPerfilModel;
+    public void getDadosOng() {
+        String idUsuario = UsuarioFirebase.getIdentificadorUsuario();
+        DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
+
+        database.child("ongs").child(idUsuario).get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+            @Override
+            public void onSuccess(DataSnapshot dataSnapshot) {
+                ongLiveData.setValue(dataSnapshot.getValue(Ong.class));
+            }
+        });
     }
 
-    public void updateNome(String nome){
-        this.meuPerfilModel.setNome(nome);
+    public MutableLiveData<Ong> getOngLiveData() {
+        return ongLiveData;
     }
 
-    public void updateEmail(String email){
-        this.meuPerfilModel.setEmail(email);
-    }
-
-    public void updateSenha(String senha){
-        this.meuPerfilModel.setSenha(senha);
-    }
-
-    public void updateConfirmSenha(String confirmSenha){
-        this.meuPerfilModel.setConfirmSenha(confirmSenha);
-    }
-
-    public void updateMissaoONG(String missaoONG){
-        this.meuPerfilModel.setMissaoONG(missaoONG);
-    }
-
-    public void updateDescricao(String descricao){
-        this.meuPerfilModel.setDescricao(descricao);
-    }
-
-    public void updateCausa(String causa){
-        this.meuPerfilModel.setCausa(causa);
+    public void setOngLiveData(MutableLiveData<Ong> ongLiveData) {
+        this.ongLiveData = ongLiveData;
     }
 }

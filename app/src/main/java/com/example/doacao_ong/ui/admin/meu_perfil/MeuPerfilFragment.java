@@ -1,73 +1,89 @@
 package com.example.doacao_ong.ui.admin.meu_perfil;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.doacao_ong.R;
+import com.example.doacao_ong.model.Ong;
+import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
+import com.example.doacao_ong.ui.config.UsuarioFirebase;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
 
 public class MeuPerfilFragment extends Fragment {
 
     private MeuPerfilViewModel meuPerfilViewModel;
     private Button buttonUpdate;
-    private EditText editTextNome;
-    private EditText editTextEmail;
-    private EditText editTextSenha;
-    private EditText editTextConfirmSenha;
-    private EditText editTextMissaoONG;
-    private EditText editTextDescricao;
-    private EditText editTextCausa;
+    private EditText inputNome;
+    private EditText inputMissaoONG;
+    private EditText inputDescricaoONG;
+    private EditText inputCausaONG;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        meuPerfilViewModel =
-                new ViewModelProvider(this).get(MeuPerfilViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View root = inflater.inflate(R.layout.meu_perfil_fragment, container, false);
 
-        editTextNome = root.findViewById(R.id.input_mp_nome);
-        editTextEmail = root.findViewById(R.id.input_mp_email);
-        editTextSenha = root.findViewById(R.id.input_mp_senha);
-        editTextConfirmSenha = root.findViewById(R.id.input_mp_confirmacao_senha);
-        editTextMissaoONG = root.findViewById(R.id.input_mp_missao_ong);
-        editTextDescricao = root.findViewById(R.id.input_mp_descricao);
-        editTextCausa = root.findViewById(R.id.input_mp_causa);
+        meuPerfilViewModel = new MeuPerfilViewModel();
 
-        buttonUpdate = root.findViewById(R.id.button_mp_atualizar);
-        buttonUpdate.setText("Atualizar");
-        buttonUpdate.setOnClickListener(new View.OnClickListener(){
+        inputNome = root.findViewById(R.id.meu_perfil_input_nome);
+        inputMissaoONG = root.findViewById(R.id.meu_perfil_input_missao_ong);
+        inputDescricaoONG = root.findViewById(R.id.meu_perfil_input_descricao_ong);
+        inputCausaONG = root.findViewById(R.id.meu_perfil_input_causa_ong);
+        buttonUpdate = root.findViewById(R.id.meu_perfil_submit_button);
+
+        String nomeUsuario = UsuarioFirebase.getInstance().getNome();
+        inputNome.setText(nomeUsuario);
+
+        meuPerfilViewModel.getDadosOng();
+
+        meuPerfilViewModel.getOngLiveData().observe(getViewLifecycleOwner(), new Observer<Ong>() {
             @Override
-            public void onClick(View v) {
-                meuPerfilViewModel.updateNome(editTextNome.getText().toString());
-                meuPerfilViewModel.updateEmail(editTextEmail.getText().toString());
-                meuPerfilViewModel.updateSenha(editTextSenha.getText().toString());
-                meuPerfilViewModel.updateConfirmSenha(editTextConfirmSenha.getText().toString());
-                meuPerfilViewModel.updateMissaoONG(editTextMissaoONG.getText().toString());
-                meuPerfilViewModel.updateDescricao(editTextDescricao.getText().toString());
-                meuPerfilViewModel.updateCausa(editTextCausa.getText().toString());
-
-                clearInputs();
+            public void onChanged(Ong ong) {
+                inputMissaoONG.setText(ong.getMissao());
+                inputCausaONG.setText(ong.getCausa());
+                inputDescricaoONG.setText(ong.getDescricao());
             }
         });
 
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (validarCampos()) {
+                    UsuarioFirebase.getInstance().setNome(inputNome.getText().toString());
+                    UsuarioFirebase.getInstance().atualizar();
+
+                    Ong ong = new Ong();
+                    ong.setMissao(inputMissaoONG.getText().toString());
+                    ong.setCausa(inputCausaONG.getText().toString());
+                    ong.setDescricao(inputDescricaoONG.getText().toString());
+                    ong.atualizar();
+
+                    Toast.makeText(getActivity(), "Perfil atualizado com sucesso", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "Campos inválidos!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         return root;
     }
 
-    private void clearInputs(){
-        editTextNome.getText().clear();
-        editTextEmail.getText().clear();
-        editTextSenha.getText().clear();
-        editTextConfirmSenha.getText().clear();
-        editTextMissaoONG.getText().clear();
-        editTextDescricao.getText().clear();
-        editTextCausa.getText().clear();
+    private boolean validarCampos() {
+        String nome = inputNome.getText().toString();
+        String missao = inputMissaoONG.getText().toString();
+        String causa = inputCausaONG.getText().toString();
+        String descricao = inputDescricaoONG.getText().toString();
+
+        return !nome.isEmpty() && !missao.isEmpty() && !causa.isEmpty() && !descricao.isEmpty();
     }
 }
