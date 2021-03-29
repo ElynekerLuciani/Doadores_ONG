@@ -5,10 +5,12 @@ import com.example.doacao_ong.ui.config.UsuarioFirebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 public class Usuario {
     private String idUser;
+    private String tipo;
     private String nome;
     private String email;
     private String senha;
@@ -38,6 +40,7 @@ public class Usuario {
     private HashMap<String, Object> converterParaMap() {
         HashMap<String, Object> usuarioMap = new HashMap<>();
         usuarioMap.put("email", getEmail());
+        usuarioMap.put("tipo", getTipo());
         usuarioMap.put("nome", getNome());
         usuarioMap.put("foto", getFoto());
         return usuarioMap;
@@ -64,6 +67,14 @@ public class Usuario {
         this.email = email;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     @Exclude
     public String getSenha() {
         return senha;
@@ -76,4 +87,5 @@ public class Usuario {
     public String getFoto() { return foto; }
 
     public void setFoto(String foto) { this.foto = foto; }
+
 }

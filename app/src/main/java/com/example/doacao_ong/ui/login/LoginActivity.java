@@ -5,14 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.doacao_ong.LoadingActivity;
 import com.example.doacao_ong.MainActivity;
 import com.example.doacao_ong.R;
 import com.example.doacao_ong.data.model.Usuario;
+import com.example.doacao_ong.ui.cadastro.CadastroActivity;
 import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,14 +24,24 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth autenticacao;
 
-    private EditText editTextEmail;
-    private EditText editTextPassword;
     private Button buttonLogin;
+    private TextView linkCadastro;
+    private EditText inputEmail, inputPassword;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = autenticacao.getCurrentUser();
+        if(user != null) {
+            abrirTelaPrincipal();
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,9 +49,18 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
-        editTextEmail = findViewById(R.id.input_username);
-        editTextPassword = findViewById(R.id.input_password);
+
+        inputEmail = findViewById(R.id.input_username);
+        inputPassword = findViewById(R.id.input_password);
         buttonLogin = findViewById(R.id.button_login);
+        linkCadastro = findViewById(R.id.login_link_cadastro);
+
+        linkCadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirTelaCadastro();
+            }
+        });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,15 +79,21 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    public void abrirTelaCadastro() {
+        Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
+        startActivity(intent);
+    }
+
     public void abrirTelaPrincipal() {
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        intent.putExtra("tipo", "admin");
+//        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this, LoadingActivity.class);
+
         startActivity(intent);
     }
 
     public void autenticarUsuario(View view) {
-        String email = editTextEmail.getText().toString();
-        String senha = editTextPassword.getText().toString();
+        String email = inputEmail.getText().toString();
+        String senha = inputPassword.getText().toString();
 
         if (!email.isEmpty() && senha.length() >= 6) {
             Usuario usuario = new Usuario();
@@ -80,13 +108,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void logarUsuario(Usuario usuario) {
-
         autenticacao.signInWithEmailAndPassword(
                 usuario.getEmail(), usuario.getSenha()
         ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
                 if (task.isSuccessful()) {
                     abrirTelaPrincipal();
                 } else {
@@ -106,11 +132,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     Toast.makeText(LoginActivity.this, excecao,
                             Toast.LENGTH_SHORT).show();
-
                 }
-
             }
         });
-
     }
 }

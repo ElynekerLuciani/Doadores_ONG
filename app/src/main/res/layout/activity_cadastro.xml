@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.cadastro.CadastroActivity">
+
+    <TextView
+        android:id="@+id/cadastro_label_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cadastro_input_nome"
+        android:layout_alignLeft="@+id/cadastro_input_nome"
+        android:layout_marginTop="16dp"
+        android:text="Nome" />
+
+    <EditText
+        android:id="@+id/cadastro_input_nome"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_label_nome"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/cadastro_label_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cadastro_input_nome"
+        android:layout_alignLeft="@+id/cadastro_input_nome"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/cadastro_input_nome"
+        android:text="Tipo de Usuário" />
+
+    <Spinner
+        android:id="@+id/cadastro_spinner_tipo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_label_tipo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/cadastro_label_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_spinner_tipo"
+        android:layout_alignStart="@+id/cadastro_input_nome"
+        android:layout_alignLeft="@+id/cadastro_input_nome"
+        android:layout_marginTop="24dp"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/cadastro_input_email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_label_email"
+        android:layout_centerHorizontal="true"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/cadastro_label_senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_input_email"
+        android:layout_alignStart="@+id/cadastro_input_nome"
+        android:layout_alignLeft="@+id/cadastro_input_nome"
+        android:layout_marginTop="24dp"
+        android:text="Senha" />
+
+    <EditText
+        android:id="@+id/cadastro_input_senha"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_label_senha"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/cadastro_label_confirmacao_senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_input_senha"
+        android:layout_alignStart="@+id/cadastro_input_nome"
+        android:layout_alignLeft="@+id/cadastro_input_nome"
+        android:layout_marginTop="24dp"
+        android:text="Confirmação de Senha" />
+
+    <EditText
+        android:id="@+id/cadastro_input_confirmacao_senha"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_label_confirmacao_senha"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/cadastro_button_submit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cadastro_input_confirmacao_senha"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Cadastrar" />
+
+    <TextView
+        android:id="@+id/cadastro_link_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cadastro_button_submit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Já tem uma conta? Fazer login" />
+
+</RelativeLayout>
