@@ -6,10 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ui.admin.meu_perfil.MeuPerfilFragment">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/meu_perfil_profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/padrao"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        android:layout_centerHorizontal="true"/>
+
     <TextView
         android:id="@+id/meu_perfil_label_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/meu_perfil_profile_image"
         android:layout_alignStart="@+id/meu_perfil_input_nome"
         android:layout_alignLeft="@+id/meu_perfil_input_nome"
         android:layout_marginTop="24dp"

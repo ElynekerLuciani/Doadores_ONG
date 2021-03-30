@@ -31,11 +31,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/dashboard_titulo_saldo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Saldo" />
 
             <TextView
+                android:id="@+id/dashboard_valor_saldo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="R$ 1.500,00"
@@ -71,11 +73,13 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/dashboard_titulo_arrecadado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Arrecadado" />
 
             <TextView
+                android:id="@+id/dashboard_total_arrecadado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -94,11 +98,13 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/dashboard_titulo_despesas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Doado" />
+                android:text="Despesas" />
 
             <TextView
+                android:id="@+id/dashboard_total_despesas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

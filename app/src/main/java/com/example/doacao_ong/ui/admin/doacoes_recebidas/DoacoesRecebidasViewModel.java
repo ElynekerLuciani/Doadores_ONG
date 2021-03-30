@@ -20,7 +20,7 @@ public class DoacoesRecebidasViewModel extends ViewModel {
         this.arrayLiveData.setValue(new ArrayList<>());
     }
 
-    public void recuperarDespesas() {
+    public void recuperarDoacoes() {
         DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
 
         database.child("doacoes").child(UsuarioFirebase.getIdentificadorUsuario())

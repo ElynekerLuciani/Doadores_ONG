@@ -52,7 +52,7 @@ public class DoacoesRecebidasFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(DoacoesRecebidasViewModel.class);
-        mViewModel.recuperarDespesas();
+        mViewModel.recuperarDoacoes();
 
         mViewModel.getArrayLiveData().observe(getActivity(), new Observer<ArrayList<Doacao>>() {
             @Override

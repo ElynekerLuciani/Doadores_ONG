@@ -21,12 +21,12 @@ import com.example.doacao_ong.model.Despesa;
 
 import java.util.ArrayList;
 
-public class ListaDespesasFragment extends Fragment {
+public class DespesasFragment extends Fragment {
 
     private DespesasViewModel mViewModel;
 
-    public static ListaDespesasFragment newInstance() {
-        return new ListaDespesasFragment();
+    public static DespesasFragment newInstance() {
+        return new DespesasFragment();
     }
 
     @Override
@@ -55,13 +55,13 @@ public class ListaDespesasFragment extends Fragment {
     private void configListView(ArrayList<Despesa> despesas) {
         if (getView() != null) {
             RecyclerView recyclerView = getView().findViewById(R.id.recycler_lista_doacoes_realizadas);
-            ListaDespesasRVAdapter recyclerAdapter = new ListaDespesasRVAdapter(getActivity(), despesas);
+            DespesasRVAdapter recyclerAdapter = new DespesasRVAdapter(getActivity(), despesas);
             RecyclerView.LayoutManager recyclerManager = new LinearLayoutManager(getActivity());
 
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(recyclerManager);
 
-            recyclerAdapter.setClickListener(new ListaDespesasRVAdapter.ItemClickListener() {
+            recyclerAdapter.setClickListener(new DespesasRVAdapter.ItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
                     Toast.makeText(getActivity(), "OK", Toast.LENGTH_LONG).show();

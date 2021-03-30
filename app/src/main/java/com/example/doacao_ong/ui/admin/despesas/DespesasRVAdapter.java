@@ -13,17 +13,14 @@ import com.example.doacao_ong.model.Despesa;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Locale;
 
-public class ListaDespesasRVAdapter extends RecyclerView.Adapter<ListaDespesasRVAdapter.ViewHolder> {
+public class DespesasRVAdapter extends RecyclerView.Adapter<DespesasRVAdapter.ViewHolder> {
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
     private ArrayList<Despesa> doacoesRealizadas;
 
-    ListaDespesasRVAdapter(Context context, ArrayList<Despesa> doacoesRealizadas) {
+    DespesasRVAdapter(Context context, ArrayList<Despesa> doacoesRealizadas) {
         this.mInflater = LayoutInflater.from(context);
         this.doacoesRealizadas = doacoesRealizadas;
     }
@@ -31,14 +28,14 @@ public class ListaDespesasRVAdapter extends RecyclerView.Adapter<ListaDespesasRV
     // inflates the row layout from xml when needed
     @NotNull
     @Override
-    public ListaDespesasRVAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DespesasRVAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.doacoes_realizadas_row, parent, false);
-        return new ListaDespesasRVAdapter.ViewHolder(view);
+        return new DespesasRVAdapter.ViewHolder(view);
     }
 
     // binds the data to the TextView in each row
     @Override
-    public void onBindViewHolder(ListaDespesasRVAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(DespesasRVAdapter.ViewHolder holder, int position) {
         Despesa doacao = doacoesRealizadas.get(position);
 
         holder.textViewData.setText(doacao.getData());
