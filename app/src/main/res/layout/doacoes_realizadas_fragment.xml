@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.admin.doacoes_realizadas.DoacoesRealizadasFragment">
+    tools:context=".ui.admin.despesas.ListaDespesasFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_lista_doacoes_realizadas"

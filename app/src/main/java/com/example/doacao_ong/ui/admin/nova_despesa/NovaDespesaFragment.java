@@ -46,7 +46,7 @@ public class NovaDespesaFragment extends Fragment {
                     despesa.setData(inputData.getText().toString());
                     despesa.setValor(inputValor.getText().toString());
                     despesa.setTipo(spinnerTipo.getSelectedItem().toString());
-                    despesa.setDescrição(inputDescricao.getText().toString());
+                    despesa.setDescricao(inputDescricao.getText().toString());
                     despesa.adicionar();
                     clearInputs();
 

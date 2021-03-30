@@ -11,7 +11,7 @@ public class Despesa {
     private String data;
     private String tipo;
     private String valor;
-    private String descrição;
+    private String descricao;
 
     public Despesa() {
     }
@@ -35,7 +35,7 @@ public class Despesa {
         despesaMap.put("data", getData());
         despesaMap.put("tipo", getTipo());
         despesaMap.put("valor", getValor());
-        despesaMap.put("descricao", getDescrição());
+        despesaMap.put("descricao", getDescricao());
         return despesaMap;
     }
 
@@ -55,12 +55,12 @@ public class Despesa {
         this.valor = valor;
     }
 
-    public String getDescrição() {
-        return descrição;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public String getData() {
