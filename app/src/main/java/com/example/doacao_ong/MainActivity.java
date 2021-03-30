@@ -1,11 +1,11 @@
 package com.example.doacao_ong;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.doacao_ong.ui.login.LoginActivity;
 
@@ -42,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        View header = navigationView.getHeaderView(0);
+
+        TextView labelNome = header.findViewById(R.id.nav_header_label_nome);
+        TextView labelEmail = header.findViewById(R.id.nav_header_label_email);
+
+        labelNome.setText(UsuarioFirebase.getInstance().getNome());
+        labelEmail.setText(UsuarioFirebase.getInstance().getEmail());
 
 //        CONFIGURANDO MENU DO DRAWER
         if (UsuarioFirebase.getInstance().getTipo().equals("Doador")) {
@@ -55,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_dashboard, R.id.nav_meu_perfil,
-                R.id.nav_lancar_saida, R.id.nav_doacoes_recebidas, R.id.nav_doacoes_realizadas, R.id.nav_usuario_doacao).setDrawerLayout(drawer).build();
+                R.id.nav_nova_despesa, R.id.nav_doacoes_recebidas, R.id.nav_despesas, R.id.nav_usuario_doacao).setDrawerLayout(drawer).build();
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
