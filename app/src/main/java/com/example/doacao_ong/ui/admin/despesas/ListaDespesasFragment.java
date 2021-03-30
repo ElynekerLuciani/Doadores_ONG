@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class ListaDespesasFragment extends Fragment {
 
-    private ListaDespesasViewModel mViewModel;
+    private DespesasViewModel mViewModel;
 
     public static ListaDespesasFragment newInstance() {
         return new ListaDespesasFragment();
@@ -41,7 +41,7 @@ public class ListaDespesasFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(getActivity()).get(ListaDespesasViewModel.class);
+        mViewModel = new ViewModelProvider(getActivity()).get(DespesasViewModel.class);
         mViewModel.recuperarDespesas();
 
         mViewModel.getArrayLiveData().observe(getActivity(), new Observer<ArrayList<Despesa>>() {

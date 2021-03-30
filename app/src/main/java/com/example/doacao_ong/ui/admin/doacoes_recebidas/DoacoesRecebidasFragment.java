@@ -1,5 +1,6 @@
 package com.example.doacao_ong.ui.admin.doacoes_recebidas;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -16,6 +17,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.doacao_ong.R;
+import com.example.doacao_ong.model.Despesa;
+import com.example.doacao_ong.model.Doacao;
+import com.example.doacao_ong.ui.config.UsuarioFirebase;
 
 import java.util.ArrayList;
 
@@ -30,9 +34,18 @@ public class DoacoesRecebidasFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         View rootview = inflater.inflate(R.layout.doacoes_recebidas_fragment, container, false);
 
-        configListView(rootview);
+//        Doacao doacao = new Doacao();
+
+//        doacao.setValor("20.00");
+//        doacao.setData("30/03/2021");
+//        doacao.setIdRecebedor(UsuarioFirebase.getIdentificadorUsuario());
+//        doacao.setNomeRecebedor(UsuarioFirebase.getInstance().getNome());
+//        doacao.setIdDoador("YyqL7raeXtMTthNWTuiurATVt5w1");
+//        doacao.setNomeDoador("Doador");
+//        doacao.adicionar();
 
         return rootview;
     }
@@ -41,33 +54,33 @@ public class DoacoesRecebidasFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(DoacoesRecebidasViewModel.class);
-        // TODO: Use the ViewModel
-    }
+        mViewModel.recuperarDespesas();
 
-    private void configListView(View view) {
-        DoacoesRecebidasModel doacao1 = new DoacoesRecebidasModel("Wilker", "01/01/2021", "50");
-        DoacoesRecebidasModel doacao2 = new DoacoesRecebidasModel("Bruno", "01/01/2021", "50");
-        DoacoesRecebidasModel doacao3 = new DoacoesRecebidasModel("João", "01/01/2021", "50");
-
-        ArrayList<DoacoesRecebidasModel> doacoes = new ArrayList<>();
-        doacoes.add(doacao1);
-        doacoes.add(doacao2);
-        doacoes.add(doacao3);
-
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_lista_doacoes_recebidas);
-        DoacoesRecebidasRVAdapter recyclerAdapter = new DoacoesRecebidasRVAdapter(getActivity(), doacoes);
-        RecyclerView.LayoutManager recyclerManager = new LinearLayoutManager(getActivity());
-
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(recyclerManager);
-
-        recyclerAdapter.setClickListener(new DoacoesRecebidasRVAdapter.ItemClickListener() {
+        mViewModel.getArrayLiveData().observe(getActivity(), new Observer<ArrayList<Doacao>>() {
             @Override
-            public void onItemClick(View view, int position) {
-                Toast.makeText(getActivity(), "OK",Toast.LENGTH_LONG).show();
+            public void onChanged(ArrayList<Doacao> despesas) {
+                configListView(despesas);
             }
         });
-        recyclerView.setAdapter(recyclerAdapter);
+    }
+
+    private void configListView(ArrayList<Doacao> doacoes) {
+        if (getView() != null) {
+            RecyclerView recyclerView = getView().findViewById(R.id.recycler_lista_doacoes_recebidas);
+            DoacoesRecebidasRVAdapter recyclerAdapter = new DoacoesRecebidasRVAdapter(getActivity(), doacoes);
+            RecyclerView.LayoutManager recyclerManager = new LinearLayoutManager(getActivity());
+
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(recyclerManager);
+
+            recyclerAdapter.setClickListener(new DoacoesRecebidasRVAdapter.ItemClickListener() {
+                @Override
+                public void onItemClick(View view, int position) {
+                    Toast.makeText(getActivity(), "OK", Toast.LENGTH_LONG).show();
+                }
+            });
+            recyclerView.setAdapter(recyclerAdapter);
+        }
     }
 
 }

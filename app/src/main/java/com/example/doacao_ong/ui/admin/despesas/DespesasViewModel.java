@@ -12,10 +12,10 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-public class ListaDespesasViewModel extends ViewModel {
+public class DespesasViewModel extends ViewModel {
     private MutableLiveData<ArrayList<Despesa>> arrayLiveData;
 
-    public ListaDespesasViewModel(){
+    public DespesasViewModel(){
         this.arrayLiveData = new MutableLiveData<>();
         this.arrayLiveData.setValue(new ArrayList<>());
     }
