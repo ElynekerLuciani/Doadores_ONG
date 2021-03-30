@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.config;
+package com.example.doacao_ong.config;
 
 import android.util.Base64;
 

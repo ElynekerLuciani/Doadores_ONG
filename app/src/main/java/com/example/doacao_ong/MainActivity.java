@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.example.doacao_ong.ui.login.LoginActivity;
 
-import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
-import com.example.doacao_ong.ui.config.UsuarioFirebase;
+import com.example.doacao_ong.config.ConfiguracaoFirebase;
+import com.example.doacao_ong.config.UsuarioFirebase;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;

@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.config;
+package com.example.doacao_ong.config;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;

@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 import com.example.doacao_ong.R;
 import com.example.doacao_ong.model.Usuario;
-import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
-import com.example.doacao_ong.ui.config.UsuarioFirebase;
+import com.example.doacao_ong.config.ConfiguracaoFirebase;
+import com.example.doacao_ong.config.UsuarioFirebase;
 import com.example.doacao_ong.ui.login.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

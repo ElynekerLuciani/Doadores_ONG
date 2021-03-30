@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.doacao_ong.model.Ong;
-import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
-import com.example.doacao_ong.ui.config.UsuarioFirebase;
+import com.example.doacao_ong.config.ConfiguracaoFirebase;
+import com.example.doacao_ong.config.UsuarioFirebase;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;

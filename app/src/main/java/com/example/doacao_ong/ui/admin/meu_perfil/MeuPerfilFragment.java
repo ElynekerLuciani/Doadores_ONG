@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
 import android.view.LayoutInflater;
@@ -16,10 +15,7 @@ import android.widget.Toast;
 
 import com.example.doacao_ong.R;
 import com.example.doacao_ong.model.Ong;
-import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
-import com.example.doacao_ong.ui.config.UsuarioFirebase;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
+import com.example.doacao_ong.config.UsuarioFirebase;
 
 public class MeuPerfilFragment extends Fragment {
 

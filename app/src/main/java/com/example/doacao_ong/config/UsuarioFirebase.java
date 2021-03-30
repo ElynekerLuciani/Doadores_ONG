@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.config;
+package com.example.doacao_ong.config;
 
 import android.net.Uri;
 import android.util.Log;

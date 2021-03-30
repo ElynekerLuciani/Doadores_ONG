@@ -17,9 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.doacao_ong.R;
-import com.example.doacao_ong.model.Despesa;
 import com.example.doacao_ong.model.Doacao;
-import com.example.doacao_ong.ui.config.UsuarioFirebase;
 
 import java.util.ArrayList;
 

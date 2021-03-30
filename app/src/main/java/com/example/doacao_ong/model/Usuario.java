@@ -1,12 +1,7 @@
 package com.example.doacao_ong.model;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
-import com.example.doacao_ong.ui.config.UsuarioFirebase;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.firebase.database.DatabaseError;
+import com.example.doacao_ong.config.ConfiguracaoFirebase;
+import com.example.doacao_ong.config.UsuarioFirebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 

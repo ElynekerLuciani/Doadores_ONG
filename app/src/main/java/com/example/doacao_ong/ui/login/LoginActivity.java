@@ -11,11 +11,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.doacao_ong.LoadingActivity;
+import com.example.doacao_ong.ui.loading.LoadingActivity;
 import com.example.doacao_ong.R;
 import com.example.doacao_ong.model.Usuario;
 import com.example.doacao_ong.ui.cadastro.CadastroActivity;
-import com.example.doacao_ong.ui.config.ConfiguracaoFirebase;
+import com.example.doacao_ong.config.ConfiguracaoFirebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
