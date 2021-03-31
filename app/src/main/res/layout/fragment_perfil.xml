@@ -7,86 +7,106 @@
     tools:context=".ui.usuario.PerfilFragment">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
+            android:id="@+id/usuario_perfil_image"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:layout_marginBottom="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
             android:src="@drawable/padrao"
             app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:civ_border_width="2dp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName5"
+        <TextView
+            android:id="@+id/usuario_perfil_label_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="188dp"
+            android:layout_below="@+id/usuario_perfil_image"
+            android:layout_alignStart="@id/usuario_perfil_input_nome"
+            android:layout_alignLeft="@id/usuario_perfil_input_nome"
+            android:layout_marginTop="24dp"
+            android:text="Nome" />
+
+        <EditText
+            android:id="@+id/usuario_perfil_input_nome"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usuario_perfil_label_nome"
+            android:layout_centerHorizontal="true"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Nome"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName8"
+        <TextView
+            android:id="@+id/usuario_perfil_label_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/usuario_perfil_input_nome"
+            android:layout_alignStart="@id/usuario_perfil_input_nome"
+            android:layout_alignLeft="@id/usuario_perfil_input_nome"
             android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Confirmar Senha"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+            android:text="Email" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName7"
+            android:id="@+id/usuario_perfil_input_email"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usuario_perfil_label_email"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/usuario_perfil_label_senha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/usuario_perfil_input_email"
+            android:layout_alignStart="@id/usuario_perfil_input_nome"
+            android:layout_alignLeft="@id/usuario_perfil_input_nome"
             android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Senha"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+            android:text="Senha" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/usuario_perfil_input_senha"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usuario_perfil_label_senha"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/usuario_perfil_label_confirmacao_senha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/usuario_perfil_input_senha"
+            android:layout_alignStart="@id/usuario_perfil_input_nome"
+            android:layout_alignLeft="@id/usuario_perfil_input_nome"
             android:layout_marginTop="16dp"
+            android:text="Confirmação Senha" />
+
+        <EditText
+            android:id="@+id/usuario_perfil_input_confirmacao_senha"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usuario_perfil_label_confirmacao_senha"
+            android:layout_centerHorizontal="true"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Email"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+            android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:id="@+id/usuario_perfil_submit_button"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/usuario_perfil_input_confirmacao_senha"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
-            android:text="Salvar Alterações"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+            android:text="Atualizar" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 
 </FrameLayout>

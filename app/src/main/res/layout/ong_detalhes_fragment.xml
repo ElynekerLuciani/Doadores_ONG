@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.usuario.ong_detalhes.OngDetalhesFragment">
+
+    <TextView
+        android:id="@+id/ong_detalhes_missao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Missão"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ong_detalhes_missao_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ong_detalhes_missao"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Coloque aqui o texto com a missão da ong" />
+
+    <TextView
+        android:id="@+id/ong_detalhes_causa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ong_detalhes_missao_msg"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Causa"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@id/ong_detalhes_causa_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ong_detalhes_causa"
+        android:layout_marginHorizontal="24dp"
+        android:text="Coloque aqui a causa da ong" />
+
+    <TextView
+        android:id="@+id/ong_detalhes_descricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ong_detalhes_causa_msg"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Descrição"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@id/ong_detalhes_descricao_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ong_detalhes_descricao"
+        android:layout_marginHorizontal="24dp"
+        android:text="Coloque aqui a causa da ong" />
+
+    <TextView
+        android:id="@+id/ong_detalhes_localizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ong_detalhes_descricao_msg"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Localização"
+        android:textStyle="bold" />
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/layout_map"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/ong_detalhes_localizacao"-->
+<!--        android:layout_marginHorizontal="24dp"-->
+<!--        android:layout_marginTop="8dp" />-->
+
+</RelativeLayout>

@@ -68,9 +68,11 @@ public class MeuPerfilFragment extends Fragment {
         meuPerfilViewModel.getOngLiveData().observe(getViewLifecycleOwner(), new Observer<Ong>() {
             @Override
             public void onChanged(Ong ong) {
-                inputMissaoONG.setText(ong.getMissao());
-                inputCausaONG.setText(ong.getCausa());
-                inputDescricaoONG.setText(ong.getDescricao());
+                if (ong != null) {
+                    inputMissaoONG.setText(ong.getMissao());
+                    inputCausaONG.setText(ong.getCausa());
+                    inputDescricaoONG.setText(ong.getDescricao());
+                }
             }
         });
 
@@ -98,7 +100,7 @@ public class MeuPerfilFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == 100){
+        if (requestCode == 100) {
             Bitmap captureImage = (Bitmap) data.getExtras().get("data");
             imageProfile.setImageBitmap(captureImage);
         }

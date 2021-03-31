@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesRecebidasRVAdapter.ViewHolder> {
 
-    private ArrayList<Doacao> doacoesRecebidas;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
+    private ArrayList<Doacao> doacoesRecebidas;
 
     DoacoesRecebidasRVAdapter(Context context, ArrayList<Doacao> doacoesRecebidas) {
         this.mInflater = LayoutInflater.from(context);

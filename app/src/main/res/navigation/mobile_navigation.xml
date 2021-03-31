@@ -37,8 +37,8 @@
 
     <fragment
         android:id="@+id/nav_usuario_doacao"
-        android:name="com.example.doacao_ong.ui.usuario.DoacaoFragment"
-        android:label="Doação"
+        android:name="com.example.doacao_ong.ui.usuario.minhas_doacoes.MinhasDoacoesFragment"
+        android:label="Minhas Doações"
         tools:layout="@layout/fragment_doacao" />
 
     <fragment
@@ -52,5 +52,17 @@
         android:name="com.example.doacao_ong.ui.usuario.PerfilFragment"
         android:label="Perfil"
         tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_usuario_ongs"
+        android:name="com.example.doacao_ong.ui.usuario.ongs.OngsFragment"
+        android:label="Ongs"
+        tools:layout="@layout/ongs_fragment" />
+
+    <fragment
+        android:id="@+id/nav_ong_detalhes"
+        android:name="com.example.doacao_ong.ui.usuario.ong_detalhes.OngDetalhesFragment"
+        android:label="Ong Detalhes"
+        tools:layout="@layout/ong_detalhes_fragment" />
 
 </navigation>

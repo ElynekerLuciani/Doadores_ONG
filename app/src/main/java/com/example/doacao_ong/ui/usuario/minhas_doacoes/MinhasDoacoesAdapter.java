@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.usuario;
+package com.example.doacao_ong.ui.usuario.minhas_doacoes;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,17 +10,18 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doacao_ong.R;
-import com.example.doacao_ong.ui.admin.doacoes_recebidas.DoacoesRecebidasRVAdapter;
+import com.example.doacao_ong.model.Doacao;
 
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
-public class MinhasDoacoesAdapter extends ArrayAdapter<DoacaoModel> {
+public class MinhasDoacoesAdapter extends ArrayAdapter<Doacao> {
 
 //    private ArrayList<DoacaoModel> doacoes;
 //    private LayoutInflater layoutInflater;
@@ -84,7 +85,7 @@ public class MinhasDoacoesAdapter extends ArrayAdapter<DoacaoModel> {
     private final Context context;
     private final int auxResource;
 
-    public MinhasDoacoesAdapter(@NonNls Context context, int resource, @NotNull ArrayList<DoacaoModel> objects) {
+    public MinhasDoacoesAdapter(@NonNls Context context, int resource, @NotNull ArrayList<Doacao> objects) {
         super(context, resource, objects);
         this.context = context;
         auxResource = resource;
@@ -92,12 +93,6 @@ public class MinhasDoacoesAdapter extends ArrayAdapter<DoacaoModel> {
 
     @SuppressLint("ViewHolder")
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
-        String ong = getItem(position).getOng();
-        String valor = getItem(position).getValor();
-        String data = getItem(position).getData();
-
-        DoacaoModel doacao = new DoacaoModel(ong, valor, data);
         LayoutInflater inflater = LayoutInflater.from(context);
         convertView = inflater.inflate(auxResource, parent, false);
 
@@ -105,9 +100,13 @@ public class MinhasDoacoesAdapter extends ArrayAdapter<DoacaoModel> {
         TextView textValor = convertView.findViewById(R.id.textValor);
         TextView textData = convertView.findViewById(R.id.textData);
 
-        textData.setText(data);
-        textOng.setText(ong);
-        textValor.setText(valor);
+        textData.setText(getItem(position).getData());
+        textOng.setText(getItem(position).getNomeRecebedor());
+
+        Locale ptBr = new Locale("pt", "BR");
+        double stringParsed = Double.parseDouble(getItem(position).getValor());
+        String valorFormatted = NumberFormat.getCurrencyInstance(ptBr).format(stringParsed);
+        textValor.setText(valorFormatted);
 
         return convertView;
     }

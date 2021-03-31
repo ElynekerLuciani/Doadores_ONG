@@ -5,9 +5,10 @@ import com.example.doacao_ong.config.UsuarioFirebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Doacao {
+public class Doacao implements Serializable {
     private String idDoador;
     private String nomeDoador;
     private String idRecebedor;
@@ -23,8 +24,7 @@ public class Doacao {
         DatabaseReference firebaseDatabase = ConfiguracaoFirebase.getFirebaseDatabase();
 
         DatabaseReference doacoesRef = firebaseDatabase
-                .child("doacoes")
-                .child(idUsuario);
+                .child("doacoes");
 
         HashMap<String, Object> valoresDoacao = converterParaMap();
         doacoesRef.push().setValue(valoresDoacao);
@@ -88,5 +88,17 @@ public class Doacao {
 
     public void setValor(String valor) {
         this.valor = valor;
+    }
+
+    @Override
+    public String toString() {
+        return "Doacao{" +
+                "idDoador='" + idDoador + '\'' +
+                ", nomeDoador='" + nomeDoador + '\'' +
+                ", idRecebedor='" + idRecebedor + '\'' +
+                ", nomeRecebedor='" + nomeRecebedor + '\'' +
+                ", data='" + data + '\'' +
+                ", valor='" + valor + '\'' +
+                '}';
     }
 }

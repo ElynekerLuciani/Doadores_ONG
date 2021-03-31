@@ -5,9 +5,10 @@ import com.example.doacao_ong.config.UsuarioFirebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Ong {
+public class Ong implements Serializable {
     private String id;
     private String missao;
     private String causa;
@@ -68,5 +69,15 @@ public class Ong {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    @Override
+    public String toString() {
+        return "Ong{" +
+                "id='" + id + '\'' +
+                ", missao='" + missao + '\'' +
+                ", causa='" + causa + '\'' +
+                ", descricao='" + descricao + '\'' +
+                '}';
     }
 }

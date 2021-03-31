@@ -23,7 +23,7 @@ public class DoacoesRecebidasViewModel extends ViewModel {
     public void recuperarDoacoes() {
         DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
 
-        database.child("doacoes").child(UsuarioFirebase.getIdentificadorUsuario())
+        database.child("doacoes").orderByChild("idDoador")
                 .get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
             @Override
             public void onSuccess(DataSnapshot dataSnapshot) {

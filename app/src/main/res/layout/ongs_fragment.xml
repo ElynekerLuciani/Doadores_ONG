@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.admin.despesas.DespesasFragment">
+    android:id="@+id/ong_fragment_layout"
+    tools:context=".ui.usuario.ongs.OngsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_lista_doacoes_realizadas"
+        android:id="@+id/ongs_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="16dp"
         android:scrollbars="vertical" />
+
 </RelativeLayout>

@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.doacao_ong.R;
+import com.example.doacao_ong.config.UsuarioFirebase;
 import com.example.doacao_ong.model.Doacao;
 
 import java.util.ArrayList;
@@ -36,9 +37,9 @@ public class DoacoesRecebidasFragment extends Fragment {
         View rootview = inflater.inflate(R.layout.doacoes_recebidas_fragment, container, false);
 
 //        Doacao doacao = new Doacao();
-
-//        doacao.setValor("20.00");
-//        doacao.setData("30/03/2021");
+//
+//        doacao.setValor("50.00");
+//        doacao.setData("31/03/2021");
 //        doacao.setIdRecebedor(UsuarioFirebase.getIdentificadorUsuario());
 //        doacao.setNomeRecebedor(UsuarioFirebase.getInstance().getNome());
 //        doacao.setIdDoador("YyqL7raeXtMTthNWTuiurATVt5w1");
