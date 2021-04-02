@@ -81,12 +81,21 @@
         android:text="Localização"
         android:textStyle="bold" />
 
-<!--    <RelativeLayout-->
-<!--        android:id="@+id/layout_map"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/ong_detalhes_localizacao"-->
-<!--        android:layout_marginHorizontal="24dp"-->
-<!--        android:layout_marginTop="8dp" />-->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/ong_detalhes_map_view"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ong_detalhes_localizacao" />
+
+    <!--    <RelativeLayout-->
+    <!--        android:id="@+id/layout_map"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@+id/ong_detalhes_localizacao"-->
+    <!--        android:layout_marginHorizontal="24dp"-->
+    <!--        android:layout_marginTop="8dp" />-->
 
 </RelativeLayout>
