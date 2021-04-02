@@ -83,16 +83,19 @@ public class UsuarioFirebase {
 
     }
 
-    public static void getFirebaseDadosUsuarioLogado() {
+    public static Usuario getDadosUsuarioLogado() {
         FirebaseUser firebaseUser = getUsuarioAtual();
 
-        getInstance().setEmail(firebaseUser.getEmail());
-        getInstance().setNome(firebaseUser.getDisplayName());
+        Usuario dadosUsuario = new Usuario();
+        dadosUsuario.setEmail(firebaseUser.getEmail());
+        dadosUsuario.setNome(firebaseUser.getDisplayName());
 
-        if (firebaseUser.getPhotoUrl() == null) {
-            getInstance().setFoto("");
+        if(firebaseUser.getPhotoUrl() == null) {
+            dadosUsuario.setFoto("");
         } else {
-            getInstance().setFoto(firebaseUser.getPhotoUrl().toString());
+            dadosUsuario.setFoto(firebaseUser.getPhotoUrl().toString());
         }
+
+        return dadosUsuario;
     }
 }

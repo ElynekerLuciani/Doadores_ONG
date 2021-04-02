@@ -60,8 +60,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-storage'
 
+    // GOOGLE-MAPS
     implementation 'com.google.maps.android:android-maps-utils:2.1.0'
     implementation 'com.google.maps.android:maps-utils-ktx:2.2.0'
+
+    // GLIDE
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
