@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.usuario.PerfilFragment">
+    tools:context=".ui.usuario.usuario_perfil.PerfilFragment">
 
 
     <RelativeLayout
@@ -17,6 +17,8 @@
             android:layout_height="96dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:focusable="true"
             android:src="@drawable/padrao"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp" />
@@ -38,70 +40,71 @@
             android:layout_below="@id/usuario_perfil_label_nome"
             android:layout_centerHorizontal="true"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:autofillHints="" />
 
-        <TextView
-            android:id="@+id/usuario_perfil_label_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/usuario_perfil_input_nome"
-            android:layout_alignStart="@id/usuario_perfil_input_nome"
-            android:layout_alignLeft="@id/usuario_perfil_input_nome"
-            android:layout_marginTop="16dp"
-            android:text="Email" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/usuario_perfil_label_email"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/usuario_perfil_input_nome"-->
+        <!--            android:layout_alignStart="@id/usuario_perfil_input_nome"-->
+        <!--            android:layout_alignLeft="@id/usuario_perfil_input_nome"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:text="Email" />-->
 
-        <EditText
-            android:id="@+id/usuario_perfil_input_email"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/usuario_perfil_label_email"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
+        <!--        <EditText-->
+        <!--            android:id="@+id/usuario_perfil_input_email"-->
+        <!--            android:layout_width="300dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/usuario_perfil_label_email"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:ems="10"-->
+        <!--            android:inputType="textEmailAddress" />-->
 
-        <TextView
-            android:id="@+id/usuario_perfil_label_senha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/usuario_perfil_input_email"
-            android:layout_alignStart="@id/usuario_perfil_input_nome"
-            android:layout_alignLeft="@id/usuario_perfil_input_nome"
-            android:layout_marginTop="16dp"
-            android:text="Senha" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/usuario_perfil_label_senha"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/usuario_perfil_input_email"-->
+        <!--            android:layout_alignStart="@id/usuario_perfil_input_nome"-->
+        <!--            android:layout_alignLeft="@id/usuario_perfil_input_nome"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:text="Senha" />-->
 
-        <EditText
-            android:id="@+id/usuario_perfil_input_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/usuario_perfil_label_senha"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:inputType="textPassword" />
+        <!--        <EditText-->
+        <!--            android:id="@+id/usuario_perfil_input_senha"-->
+        <!--            android:layout_width="300dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@id/usuario_perfil_label_senha"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:ems="10"-->
+        <!--            android:inputType="textPassword" />-->
 
-        <TextView
-            android:id="@+id/usuario_perfil_label_confirmacao_senha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/usuario_perfil_input_senha"
-            android:layout_alignStart="@id/usuario_perfil_input_nome"
-            android:layout_alignLeft="@id/usuario_perfil_input_nome"
-            android:layout_marginTop="16dp"
-            android:text="Confirmação Senha" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/usuario_perfil_label_confirmacao_senha"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/usuario_perfil_input_senha"-->
+        <!--            android:layout_alignStart="@id/usuario_perfil_input_nome"-->
+        <!--            android:layout_alignLeft="@id/usuario_perfil_input_nome"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:text="Confirmação Senha" />-->
 
-        <EditText
-            android:id="@+id/usuario_perfil_input_confirmacao_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/usuario_perfil_label_confirmacao_senha"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:inputType="textPassword" />
+        <!--        <EditText-->
+        <!--            android:id="@+id/usuario_perfil_input_confirmacao_senha"-->
+        <!--            android:layout_width="300dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/usuario_perfil_label_confirmacao_senha"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:ems="10"-->
+        <!--            android:inputType="textPassword" />-->
 
         <Button
             android:id="@+id/usuario_perfil_submit_button"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/usuario_perfil_input_confirmacao_senha"
+            android:layout_below="@+id/usuario_perfil_input_nome"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
             android:text="Atualizar" />

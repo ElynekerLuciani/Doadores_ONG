@@ -50,11 +50,11 @@ public class OngsRVAdapter extends RecyclerView.Adapter<OngsRVAdapter.ViewHolder
 
 //                context.getS
 
-//                ((FragmentActivity) context).getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.nav_host_fragment,
-//                                new DoarFragment(), "DOAR")
-//                        .commit();
+                ((FragmentActivity) context).getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment,
+                                new DoarFragment(), null)
+                        .commit();
             }
         });
 
