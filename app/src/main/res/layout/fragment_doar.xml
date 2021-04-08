@@ -13,7 +13,7 @@
         android:layout_alignStart="@+id/doar_input_ong"
         android:layout_alignLeft="@+id/doar_input_ong"
         android:layout_marginTop="24dp"
-        android:text="ONG" />
+        android:text="Nome da ONG" />
 
     <EditText
         android:id="@+id/doar_input_ong"
@@ -63,7 +63,7 @@
         android:inputType="date" />
 
     <Button
-        android:id="@+id/idButtonDoar"
+        android:id="@+id/doar_submit_button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/doar_input_data"

@@ -20,7 +20,7 @@ public class Doacao implements Serializable {
     }
 
     public void adicionar() {
-        String idUsuario = UsuarioFirebase.getIdentificadorUsuario();
+//        String idUsuario = UsuarioFirebase.getIdentificadorUsuario();
         DatabaseReference firebaseDatabase = ConfiguracaoFirebase.getFirebaseDatabase();
 
         DatabaseReference doacoesRef = firebaseDatabase
