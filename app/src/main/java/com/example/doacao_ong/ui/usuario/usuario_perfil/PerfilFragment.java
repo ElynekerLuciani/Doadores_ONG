@@ -163,8 +163,6 @@ public class PerfilFragment extends Fragment {
                                     atualizaFotoUsuario(url);
                                 }
                             });
-
-
                         }
                     });
 
@@ -179,9 +177,6 @@ public class PerfilFragment extends Fragment {
     private void atualizaFotoUsuario(Uri url) {
         boolean retorno = UsuarioFirebase.atualizarFotoUsuario(url);
         if (retorno) {
-            usuarioLogado.setFoto(url.toString());
-            usuarioLogado.atualizar();
-
             Toast.makeText(getActivity(),
                     "Foto atualizada com sucesso!",
                     Toast.LENGTH_SHORT).show();

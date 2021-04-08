@@ -7,10 +7,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.doacao_ong.ui.login.LoginActivity;
-
 import com.example.doacao_ong.config.ConfiguracaoFirebase;
 import com.example.doacao_ong.config.UsuarioFirebase;
+import com.example.doacao_ong.ui.login.LoginActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -58,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
             navigationView.getMenu().setGroupVisible(R.id.menu_usuario, false);
             navigationView.getMenu().setGroupVisible(R.id.menu_admin, true);
         }
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_dashboard, R.id.nav_meu_perfil,
                 R.id.nav_nova_despesa, R.id.nav_doacoes_recebidas, R.id.nav_despesas,

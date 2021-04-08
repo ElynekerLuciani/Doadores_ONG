@@ -178,9 +178,9 @@ public class MeuPerfilFragment extends Fragment {
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(getActivity(),
-                                    "Sucesso ao fazer upload de imagem",
-                                    Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getActivity(),
+//                                    "Sucesso ao fazer upload de imagem",
+//                                    Toast.LENGTH_SHORT).show();
                             //atualizar a imagem
                             imagemRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                                 @Override
@@ -205,10 +205,7 @@ public class MeuPerfilFragment extends Fragment {
 
     private void atualizaFotoUsuario(Uri url) {
         boolean retorno = UsuarioFirebase.atualizarFotoUsuario(url);
-        if(retorno) {
-            usuarioLogado.setFoto(url.toString());
-            usuarioLogado.atualizar();
-
+        if (retorno) {
             Toast.makeText(getActivity(),
                     "Foto atualizada com sucesso!",
                     Toast.LENGTH_SHORT).show();

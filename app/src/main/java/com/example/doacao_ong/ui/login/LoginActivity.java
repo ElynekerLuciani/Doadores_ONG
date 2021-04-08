@@ -65,15 +65,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 autenticarUsuario(v);
-                /*Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
-                if (editTextEmail.getText().toString().equals("usuario") && editTextPassword.getText().toString().equals("usuario")){
-                    intent.putExtra("tipo", "usuario");
-                } else {
-                    intent.putExtra("tipo", "admin");
-                }
-
-                startActivity(intent);*/
             }
         });
     }
@@ -84,7 +75,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void abrirTelaPrincipal() {
-//        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         Intent intent = new Intent(LoginActivity.this, LoadingActivity.class);
 
         startActivity(intent);
