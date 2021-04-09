@@ -14,11 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.doacao_ong.R;
 import com.example.doacao_ong.model.Ong;
-import com.example.doacao_ong.ui.usuario.DoarFragment;
 
 import java.util.ArrayList;
 
@@ -60,15 +58,7 @@ public class OngsFragment extends Fragment {
 
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(recyclerManager);
-
-//            recyclerAdapter.setClickListener(new OngsRVAdapter.ItemClickListener() {
-//                @Override
-//                public void onItemClick(View view, int position) {
-//
-//                }
-//            });
             recyclerView.setAdapter(recyclerAdapter);
         }
     }
-
 }

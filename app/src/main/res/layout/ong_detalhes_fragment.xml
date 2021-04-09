@@ -5,10 +5,35 @@
     android:layout_height="match_parent"
     tools:context=".ui.usuario.ong_detalhes.OngDetalhesFragment">
 
+    <LinearLayout
+        android:id="@+id/ong_layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/ong_detalhes_input_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:hint="Nome da ONG" />
+
+        <Button
+            android:id="@+id/ong_detalhes_button_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:text="Buscar" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/ong_detalhes_missao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ong_layout_search"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="24dp"
@@ -83,12 +108,12 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/ong_detalhes_map_view"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/ong_detalhes_localizacao" />
+        android:layout_below="@id/ong_detalhes_localizacao"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp" />
 
     <!--    <RelativeLayout-->
     <!--        android:id="@+id/layout_map"-->

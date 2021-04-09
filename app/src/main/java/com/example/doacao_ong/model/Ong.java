@@ -10,12 +10,12 @@ import java.util.HashMap;
 
 public class Ong implements Serializable {
     private String id;
+    private String nome;
     private String missao;
     private String causa;
     private String descricao;
-
-    public Ong() {
-    }
+    private double latitude;
+    private double longitude;
 
     public void atualizar() {
         String idUsuario = UsuarioFirebase.getIdentificadorUsuario();
@@ -33,9 +33,12 @@ public class Ong implements Serializable {
     @Exclude
     private HashMap<String, Object> converterParaMap() {
         HashMap<String, Object> ongMap = new HashMap<>();
+        ongMap.put("nome", getNome());
         ongMap.put("missao", getMissao());
         ongMap.put("causa", getCausa());
         ongMap.put("descricao", getDescricao());
+        ongMap.put("latitude", getLatitude());
+        ongMap.put("longitude", getLongitude());
         return ongMap;
     }
 
@@ -45,6 +48,14 @@ public class Ong implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getMissao() {
@@ -71,13 +82,19 @@ public class Ong implements Serializable {
         this.descricao = descricao;
     }
 
-    @Override
-    public String toString() {
-        return "Ong{" +
-                "id='" + id + '\'' +
-                ", missao='" + missao + '\'' +
-                ", causa='" + causa + '\'' +
-                ", descricao='" + descricao + '\'' +
-                '}';
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

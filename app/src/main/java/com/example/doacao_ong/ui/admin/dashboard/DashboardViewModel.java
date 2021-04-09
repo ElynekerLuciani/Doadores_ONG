@@ -30,7 +30,7 @@ public class DashboardViewModel extends ViewModel {
     public void somarDoacoes() {
         DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
 
-        database.child("doacoes").child(UsuarioFirebase.getIdentificadorUsuario())
+        database.child("doacoes").orderByChild("idRecebedor").equalTo(UsuarioFirebase.getIdentificadorUsuario())
                 .get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
             @Override
             public void onSuccess(DataSnapshot dataSnapshot) {

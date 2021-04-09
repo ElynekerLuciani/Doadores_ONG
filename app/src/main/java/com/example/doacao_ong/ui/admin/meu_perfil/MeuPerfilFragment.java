@@ -58,6 +58,8 @@ public class MeuPerfilFragment extends Fragment {
     private EditText inputCausaONG;
     private EditText inputMissaoONG;
     private EditText inputDescricaoONG;
+    private EditText inputLatitudeONG;
+    private EditText inputLongitudeONG;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -73,6 +75,8 @@ public class MeuPerfilFragment extends Fragment {
         inputCausaONG = root.findViewById(R.id.meu_perfil_input_causa_ong);
         inputMissaoONG = root.findViewById(R.id.meu_perfil_input_missao_ong);
         inputDescricaoONG = root.findViewById(R.id.meu_perfil_input_descricao_ong);
+        inputLatitudeONG = root.findViewById(R.id.meu_perfil_input_latitude_ong);
+        inputLongitudeONG = root.findViewById(R.id.meu_perfil_input_longitude_ong);
         imageProfile = root.findViewById(R.id.meu_perfil_profile_image);
         buttonUpdate = root.findViewById(R.id.meu_perfil_submit_button);
 
@@ -103,9 +107,11 @@ public class MeuPerfilFragment extends Fragment {
             @Override
             public void onChanged(Ong ong) {
                 if (ong != null) {
-                    inputMissaoONG.setText(ong.getMissao());
                     inputCausaONG.setText(ong.getCausa());
+                    inputMissaoONG.setText(ong.getMissao());
                     inputDescricaoONG.setText(ong.getDescricao());
+                    inputLatitudeONG.setText(String.valueOf(ong.getLatitude()));
+                    inputLongitudeONG.setText(String.valueOf(ong.getLongitude()));
                 }
             }
         });
@@ -118,9 +124,12 @@ public class MeuPerfilFragment extends Fragment {
                     UsuarioFirebase.getInstance().atualizar();
 
                     Ong ong = new Ong();
-                    ong.setMissao(inputMissaoONG.getText().toString());
+                    ong.setNome(inputNome.getText().toString());
                     ong.setCausa(inputCausaONG.getText().toString());
+                    ong.setMissao(inputMissaoONG.getText().toString());
                     ong.setDescricao(inputDescricaoONG.getText().toString());
+                    ong.setLatitude(Double.parseDouble(inputLatitudeONG.getText().toString()));
+                    ong.setLongitude(Double.parseDouble(inputLongitudeONG.getText().toString()));
                     ong.atualizar();
 
                     Toast.makeText(getActivity(), "Perfil atualizado com sucesso", Toast.LENGTH_SHORT).show();
@@ -190,17 +199,13 @@ public class MeuPerfilFragment extends Fragment {
                                     atualizaFotoUsuario(url);
                                 }
                             });
-
-
                         }
                     });
-
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
     }
 
     private void atualizaFotoUsuario(Uri url) {
@@ -224,7 +229,9 @@ public class MeuPerfilFragment extends Fragment {
         String missao = inputMissaoONG.getText().toString();
         String causa = inputCausaONG.getText().toString();
         String descricao = inputDescricaoONG.getText().toString();
+        String latitude = inputLatitudeONG.getText().toString();
+        String longitude = inputLongitudeONG.getText().toString();
 
-        return !nome.isEmpty() && !missao.isEmpty() && !causa.isEmpty() && !descricao.isEmpty();
+        return !nome.isEmpty() && !missao.isEmpty() && !causa.isEmpty() && !descricao.isEmpty() && !latitude.isEmpty() && !longitude.isEmpty();
     }
 }
