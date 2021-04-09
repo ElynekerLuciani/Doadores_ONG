@@ -1,9 +1,9 @@
-package com.example.doacao_ong.ui.admin.doacoes_recebidas;
+package com.example.doacao_ong.ui.admin.despesas;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.doacao_ong.model.Doacao;
+import com.example.doacao_ong.model.Despesa;
 import com.example.doacao_ong.config.ConfiguracaoFirebase;
 import com.example.doacao_ong.config.UsuarioFirebase;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -12,35 +12,35 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-public class DoacoesRecebidasViewModel extends ViewModel {
-    private MutableLiveData<ArrayList<Doacao>> arrayLiveData;
+public class DespesasViewModel extends ViewModel {
+    private MutableLiveData<ArrayList<Despesa>> arrayLiveData;
 
-    public DoacoesRecebidasViewModel() {
+    public DespesasViewModel(){
         this.arrayLiveData = new MutableLiveData<>();
         this.arrayLiveData.setValue(new ArrayList<>());
     }
 
-    public void recuperarDoacoes() {
+    public void recuperarDespesas() {
         DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
 
-        database.child("doacoes").orderByChild("idRecebedor").equalTo(UsuarioFirebase.getIdentificadorUsuario())
+        database.child("ongs_despesas").child(UsuarioFirebase.getIdentificadorUsuario())
                 .get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
             @Override
             public void onSuccess(DataSnapshot dataSnapshot) {
-                ArrayList<Doacao> doacoesArrayList = new ArrayList<>();
+                ArrayList<Despesa> despesaArrayList = new ArrayList<>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    doacoesArrayList.add(snapshot.getValue(Doacao.class));
+                    despesaArrayList.add(snapshot.getValue(Despesa.class));
                 }
-                getArrayLiveData().setValue(doacoesArrayList);
+                getArrayLiveData().setValue(despesaArrayList);
             }
         });
     }
 
-    public MutableLiveData<ArrayList<Doacao>> getArrayLiveData() {
+    public MutableLiveData<ArrayList<Despesa>> getArrayLiveData() {
         return arrayLiveData;
     }
 
-    public void setArrayLiveData(MutableLiveData<ArrayList<Doacao>> arrayLiveData) {
+    public void setArrayLiveData(MutableLiveData<ArrayList<Despesa>> arrayLiveData) {
         this.arrayLiveData = arrayLiveData;
     }
 }

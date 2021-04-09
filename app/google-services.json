@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "806044748795",
+    "project_id": "mobile-ong",
+    "storage_bucket": "mobile-ong.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806044748795:android:fd1852c829770fda33995e",
+        "android_client_info": {
+          "package_name": "com.example.doacao_ong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806044748795-ht4cmulerbrprsr0ajk8m3ugu5c8a7es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA7IeIVdPPhwaxdwbXV3sTg5tlDyBl9pM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806044748795-ht4cmulerbrprsr0ajk8m3ugu5c8a7es.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

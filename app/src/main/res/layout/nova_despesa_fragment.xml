@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.admin.nova_despesa.NovaDespesaFragment">
+
+    <TextView
+        android:id="@+id/nova_despesa_label_descricao"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/nova_despesa_input_descricao"
+        android:layout_alignLeft="@id/nova_despesa_input_descricao"
+        android:layout_marginTop="24dp"
+        android:text="Descrição" />
+
+    <EditText
+        android:id="@+id/nova_despesa_input_descricao"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nova_despesa_label_descricao"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/nova_despesa_label_tipo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nova_despesa_input_descricao"
+        android:layout_alignStart="@id/nova_despesa_input_descricao"
+        android:layout_alignLeft="@id/nova_despesa_input_descricao"
+        android:layout_marginTop="16dp"
+        android:text="Tipo" />
+
+    <Spinner
+        android:id="@+id/nova_despesa_spinner_tipo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nova_despesa_label_tipo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/nova_despesa_label_valor"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nova_despesa_spinner_tipo"
+        android:layout_alignStart="@+id/nova_despesa_input_valor"
+        android:layout_alignLeft="@+id/nova_despesa_input_valor"
+        android:layout_marginTop="16dp"
+        android:text="Valor (R$)" />
+
+    <EditText
+        android:id="@+id/nova_despesa_input_valor"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nova_despesa_label_valor"
+        android:layout_centerHorizontal="true"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/nova_despesa_label_data"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nova_despesa_input_valor"
+        android:layout_alignStart="@id/nova_despesa_input_descricao"
+        android:layout_alignLeft="@id/nova_despesa_input_descricao"
+        android:layout_marginTop="16dp"
+        android:text="Data (01/01/2021)" />
+
+    <EditText
+        android:id="@+id/nova_despesa_input_data"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nova_despesa_label_data"
+        android:layout_centerHorizontal="true"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/nova_despesa_submit_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nova_despesa_input_data"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Cadastrar" />
+
+</RelativeLayout>

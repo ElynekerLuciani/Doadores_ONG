@@ -18,10 +18,10 @@
         tools:layout="@layout/meu_perfil_fragment" />
 
     <fragment
-        android:id="@+id/nav_lancar_saida"
-        android:name="com.example.doacao_ong.ui.admin.lancar_saida.LancarSaidaFragment"
+        android:id="@+id/nav_nova_despesa"
+        android:name="com.example.doacao_ong.ui.admin.nova_despesa.NovaDespesaFragment"
         android:label="Lançar Saída"
-        tools:layout="@layout/lancar_saida_fragment" />
+        tools:layout="@layout/nova_despesa_fragment" />
 
     <fragment
         android:id="@+id/nav_doacoes_recebidas"
@@ -30,27 +30,40 @@
         tools:layout="@layout/doacoes_recebidas_fragment" />
 
     <fragment
-        android:id="@+id/nav_doacoes_realizadas"
-        android:name="com.example.doacao_ong.ui.admin.doacoes_realizadas.DoacoesRealizadasFragment"
-        android:label="Doações Realizadas"
+        android:id="@+id/nav_despesas"
+        android:name="com.example.doacao_ong.ui.admin.despesas.DespesasFragment"
+        android:label="Despesas"
         tools:layout="@layout/doacoes_realizadas_fragment" />
 
     <fragment
         android:id="@+id/nav_usuario_doacao"
-        android:name="com.example.doacao_ong.ui.usuario.DoacaoFragment"
-        android:label="Doação"
+        android:name="com.example.doacao_ong.ui.usuario.minhas_doacoes.MinhasDoacoesFragment"
+        android:label="Minhas Doações"
         tools:layout="@layout/fragment_doacao" />
 
     <fragment
         android:id="@+id/nav_usuario_doar"
-        android:name="com.example.doacao_ong.ui.usuario.DoarFragment"
+        android:name="com.example.doacao_ong.ui.usuario.doar.DoarFragment"
         android:label="Doar"
         tools:layout="@layout/fragment_doar" />
 
     <fragment
         android:id="@+id/nav_usuario_perfil"
-        android:name="com.example.doacao_ong.ui.usuario.PerfilFragment"
+        android:name="com.example.doacao_ong.ui.usuario.usuario_perfil.PerfilFragment"
         android:label="Perfil"
         tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_usuario_ongs"
+        android:name="com.example.doacao_ong.ui.usuario.ongs.OngsFragment"
+        android:label="Ongs"
+        tools:layout="@layout/ongs_fragment" />
+
+    <fragment
+        android:id="@+id/nav_ong_detalhes"
+        android:name="com.example.doacao_ong.ui.usuario.ong_detalhes.OngDetalhesFragment"
+        android:label="Ong Detalhes"
+        tools:layout="@layout/ong_detalhes_fragment" >
+    </fragment>
 
 </navigation>

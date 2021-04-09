@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.admin.meu_perfil;
+package com.example.doacao_ong.ui.usuario.usuario_perfil;
 
 import android.Manifest;
 import android.content.Intent;
@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -25,8 +24,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.doacao_ong.R;
 import com.example.doacao_ong.config.ConfiguracaoFirebase;
-import com.example.doacao_ong.model.Ong;
 import com.example.doacao_ong.config.UsuarioFirebase;
+import com.example.doacao_ong.model.Ong;
 import com.example.doacao_ong.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -41,12 +40,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.app.Activity.RESULT_OK;
 
-public class MeuPerfilFragment extends Fragment {
+public class PerfilFragment extends Fragment {
 
     private StorageReference storageReference;
     private String identificadorUsuario;
 
-    private MeuPerfilViewModel meuPerfilViewModel;
     private static final int SELECAO_CAMERA = 10;
     private static final int SELECAO_GALERIA = 20;
 
@@ -55,30 +53,19 @@ public class MeuPerfilFragment extends Fragment {
 
     private Button buttonUpdate;
     private EditText inputNome;
-    private EditText inputCausaONG;
-    private EditText inputMissaoONG;
-    private EditText inputDescricaoONG;
-    private EditText inputLatitudeONG;
-    private EditText inputLongitudeONG;
 
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View root = inflater.inflate(R.layout.meu_perfil_fragment, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_perfil, container, false);
 
         storageReference = ConfiguracaoFirebase.getFirebaseStorage();
         identificadorUsuario = UsuarioFirebase.getIdentificadorUsuario();
         usuarioLogado = UsuarioFirebase.getDadosUsuarioLogado();
 
-        meuPerfilViewModel = new MeuPerfilViewModel();
-
-        inputNome = root.findViewById(R.id.meu_perfil_input_nome);
-        inputCausaONG = root.findViewById(R.id.meu_perfil_input_causa_ong);
-        inputMissaoONG = root.findViewById(R.id.meu_perfil_input_missao_ong);
-        inputDescricaoONG = root.findViewById(R.id.meu_perfil_input_descricao_ong);
-        inputLatitudeONG = root.findViewById(R.id.meu_perfil_input_latitude_ong);
-        inputLongitudeONG = root.findViewById(R.id.meu_perfil_input_longitude_ong);
-        imageProfile = root.findViewById(R.id.meu_perfil_profile_image);
-        buttonUpdate = root.findViewById(R.id.meu_perfil_submit_button);
+        inputNome = root.findViewById(R.id.usuario_perfil_input_nome);
+        imageProfile = root.findViewById(R.id.usuario_perfil_image);
+        buttonUpdate = root.findViewById(R.id.usuario_perfil_submit_button);
 
         String nomeUsuario = UsuarioFirebase.getInstance().getNome();
         inputNome.setText(nomeUsuario);
@@ -101,21 +88,6 @@ public class MeuPerfilFragment extends Fragment {
             }
         });
 
-        meuPerfilViewModel.getDadosOng();
-
-        meuPerfilViewModel.getOngLiveData().observe(getViewLifecycleOwner(), new Observer<Ong>() {
-            @Override
-            public void onChanged(Ong ong) {
-                if (ong != null) {
-                    inputCausaONG.setText(ong.getCausa());
-                    inputMissaoONG.setText(ong.getMissao());
-                    inputDescricaoONG.setText(ong.getDescricao());
-                    inputLatitudeONG.setText(String.valueOf(ong.getLatitude()));
-                    inputLongitudeONG.setText(String.valueOf(ong.getLongitude()));
-                }
-            }
-        });
-
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,21 +95,13 @@ public class MeuPerfilFragment extends Fragment {
                     UsuarioFirebase.getInstance().setNome(inputNome.getText().toString());
                     UsuarioFirebase.getInstance().atualizar();
 
-                    Ong ong = new Ong();
-                    ong.setNome(inputNome.getText().toString());
-                    ong.setCausa(inputCausaONG.getText().toString());
-                    ong.setMissao(inputMissaoONG.getText().toString());
-                    ong.setDescricao(inputDescricaoONG.getText().toString());
-                    ong.setLatitude(Double.parseDouble(inputLatitudeONG.getText().toString()));
-                    ong.setLongitude(Double.parseDouble(inputLongitudeONG.getText().toString()));
-                    ong.atualizar();
-
                     Toast.makeText(getActivity(), "Perfil atualizado com sucesso", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getActivity(), "Campos inválidos!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
         return root;
     }
 
@@ -201,11 +165,13 @@ public class MeuPerfilFragment extends Fragment {
                             });
                         }
                     });
+
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+
     }
 
     private void atualizaFotoUsuario(Uri url) {
@@ -226,12 +192,7 @@ public class MeuPerfilFragment extends Fragment {
 
     private boolean validarCampos() {
         String nome = inputNome.getText().toString();
-        String missao = inputMissaoONG.getText().toString();
-        String causa = inputCausaONG.getText().toString();
-        String descricao = inputDescricaoONG.getText().toString();
-        String latitude = inputLatitudeONG.getText().toString();
-        String longitude = inputLongitudeONG.getText().toString();
 
-        return !nome.isEmpty() && !missao.isEmpty() && !causa.isEmpty() && !descricao.isEmpty() && !latitude.isEmpty() && !longitude.isEmpty();
+        return !nome.isEmpty();
     }
 }

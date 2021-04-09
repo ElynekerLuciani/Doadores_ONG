@@ -16,33 +16,33 @@
         <item
             android:id="@+id/nav_meu_perfil"
             android:icon="@drawable/ic_menu_meu_perfil"
-            android:title="Meu perfil" />
+            android:title="Meu Perfil" />
 
         <item
-            android:id="@+id/nav_lancar_saida"
+            android:id="@+id/nav_nova_despesa"
             android:icon="@drawable/ic_menu_lancar_saida"
-            android:title="Lançar saída" />
+            android:title="Nova Despesa" />
+
+        <item
+            android:id="@+id/nav_despesas"
+            android:icon="@drawable/ic_doacoes_realizadas"
+            android:title="Despesas" />
 
         <item
             android:id="@+id/nav_doacoes_recebidas"
             android:icon="@drawable/ic_doaces_recebidas"
             android:title="Doações Recebidas" />
-
-        <item
-            android:id="@+id/nav_doacoes_realizadas"
-            android:icon="@drawable/ic_doacoes_realizadas"
-            android:title="Doações Realizadas" />
     </group>
 
     <group
         android:id="@+id/menu_usuario"
         android:checkableBehavior="single"
-        android:visible="false">
+        android:visible="true">
 
         <item
-            android:id="@+id/nav_usuario_doacao"
+            android:id="@+id/nav_usuario_perfil"
             android:icon="@drawable/ic_menu_dashboard"
-            android:title="Doação" />
+            android:title="Perfil" />
 
         <item
             android:id="@+id/nav_usuario_doar"
@@ -50,9 +50,18 @@
             android:title="Doar" />
 
         <item
-            android:id="@+id/nav_usuario_perfil"
+            android:id="@+id/nav_usuario_ongs"
             android:icon="@drawable/ic_menu_dashboard"
-            android:title="Perfil" />
+            android:title="Lista de Ongs" />
 
+        <item
+            android:id="@+id/nav_usuario_doacao"
+            android:icon="@drawable/ic_menu_dashboard"
+            android:title="Minhas Doações" />
+
+        <item
+            android:id="@+id/nav_ong_detalhes"
+            android:icon="@drawable/ic_menu_dashboard"
+            android:title="Ong Detalhes" />
     </group>
 </menu>

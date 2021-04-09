@@ -1,174 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.admin.meu_perfil.MeuPerfilFragment">
 
-    <LinearLayout
-        android:id="@+id/layout_nome"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/meu_perfil_profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/padrao"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
 
         <TextView
-            android:id="@+id/label_nome"
-            android:layout_width="300dp"
+            android:id="@+id/meu_perfil_label_nome"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_profile_image"
+            android:layout_alignStart="@+id/meu_perfil_input_nome"
+            android:layout_alignLeft="@+id/meu_perfil_input_nome"
+            android:layout_marginTop="24dp"
             android:text="Nome" />
 
         <EditText
-            android:id="@+id/input_mp_nome"
+            android:id="@+id/meu_perfil_input_nome"
             android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_nome"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_label_nome"
+            android:layout_centerHorizontal="true" />
 
         <TextView
-            android:id="@+id/label_email"
-            android:layout_width="300dp"
+            android:id="@+id/meu_perfil_label_missao_ong"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email" />
-
-        <EditText
-            android:id="@+id/input_mp_email"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_senha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_email"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/label_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Senha" />
-
-        <EditText
-            android:id="@+id/input_mp_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_confirmacao_senha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_senha"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/label_confirmacao_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="Confirmação de senha" />
-
-        <EditText
-            android:id="@+id/input_mp_confirmacao_senha"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_missao_ong"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_confirmacao_senha"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/label_missao_ong"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_input_nome"
+            android:layout_alignStart="@+id/meu_perfil_input_missao_ong"
+            android:layout_alignLeft="@+id/meu_perfil_input_missao_ong"
+            android:layout_marginTop="16dp"
             android:text="Missão da ONG" />
 
         <EditText
-            android:id="@+id/input_mp_missao_ong"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_descricao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_missao_ong"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/label_descricao"
+            android:id="@+id/meu_perfil_input_missao_ong"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Descrição" />
-
-        <EditText
-            android:id="@+id/input_mp_descricao"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_causa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_descricao"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+            android:layout_below="@+id/meu_perfil_label_missao_ong"
+            android:layout_centerHorizontal="true" />
 
         <TextView
-            android:id="@+id/label_causa"
-            android:layout_width="300dp"
+            android:id="@+id/meu_perfil_label_causa_ong"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Missão da ONG" />
+            android:layout_below="@+id/meu_perfil_input_missao_ong"
+            android:layout_alignStart="@+id/meu_perfil_input_missao_ong"
+            android:layout_alignLeft="@+id/meu_perfil_input_missao_ong"
+            android:layout_marginTop="16dp"
+            android:text="Causa da ONG" />
 
         <EditText
-            android:id="@+id/input_mp_causa"
+            android:id="@+id/meu_perfil_input_causa_ong"
             android:layout_width="300dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_label_causa_ong"
+            android:layout_centerHorizontal="true" />
 
-    <LinearLayout
-        android:id="@+id/layout_button_atualizar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_causa"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        <TextView
+            android:id="@+id/meu_perfil_label_descricao_ong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_input_causa_ong"
+            android:layout_alignStart="@+id/meu_perfil_input_missao_ong"
+            android:layout_alignLeft="@+id/meu_perfil_input_missao_ong"
+            android:layout_marginTop="16dp"
+            android:text="Descrição da ONG" />
+
+        <EditText
+            android:id="@+id/meu_perfil_input_descricao_ong"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_label_descricao_ong"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/meu_perfil_label_latitude_ong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_input_descricao_ong"
+            android:layout_alignStart="@+id/meu_perfil_input_missao_ong"
+            android:layout_alignLeft="@+id/meu_perfil_input_missao_ong"
+            android:layout_marginTop="16dp"
+            android:text="Latitude" />
+
+        <EditText
+            android:id="@+id/meu_perfil_input_latitude_ong"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_label_latitude_ong"
+            android:layout_centerHorizontal="true"
+            android:inputType="numberDecimal|numberSigned" />
+
+        <TextView
+            android:id="@+id/meu_perfil_label_longitude_ong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_input_latitude_ong"
+            android:layout_alignStart="@+id/meu_perfil_input_missao_ong"
+            android:layout_alignLeft="@+id/meu_perfil_input_missao_ong"
+            android:layout_marginTop="16dp"
+            android:text="Longitude" />
+
+        <EditText
+            android:id="@+id/meu_perfil_input_longitude_ong"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meu_perfil_label_longitude_ong"
+            android:layout_centerHorizontal="true"
+            android:inputType="numberDecimal|numberSigned" />
 
         <Button
-            android:id="@+id/button_mp_atualizar"
+            android:id="@+id/meu_perfil_submit_button"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            tools:text="Atualizar" />
-    </LinearLayout>
-
-
-</RelativeLayout>
+            android:layout_below="@+id/meu_perfil_input_longitude_ong"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="36dp"
+            android:text="Atualizar" />
+    </RelativeLayout>
+</ScrollView>

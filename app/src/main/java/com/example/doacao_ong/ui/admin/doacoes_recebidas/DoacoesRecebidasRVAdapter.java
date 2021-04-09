@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doacao_ong.R;
+import com.example.doacao_ong.model.Doacao;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -16,11 +17,11 @@ import java.util.ArrayList;
 
 public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesRecebidasRVAdapter.ViewHolder> {
 
-    private ArrayList<DoacoesRecebidasModel> doacoesRecebidas;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
+    private ArrayList<Doacao> doacoesRecebidas;
 
-    DoacoesRecebidasRVAdapter(Context context, ArrayList<DoacoesRecebidasModel> doacoesRecebidas) {
+    DoacoesRecebidasRVAdapter(Context context, ArrayList<Doacao> doacoesRecebidas) {
         this.mInflater = LayoutInflater.from(context);
         this.doacoesRecebidas = doacoesRecebidas;
     }
@@ -36,7 +37,7 @@ public class DoacoesRecebidasRVAdapter extends RecyclerView.Adapter<DoacoesReceb
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        DoacoesRecebidasModel doacao = doacoesRecebidas.get(position);
+        Doacao doacao = doacoesRecebidas.get(position);
 
         holder.textViewNome.setText(doacao.getNomeDoador());
         holder.textViewData.setText(doacao.getData());

@@ -1,4 +1,4 @@
-package com.example.doacao_ong.ui.admin.doacoes_realizadas;
+package com.example.doacao_ong.ui.admin.despesas;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,17 +9,18 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doacao_ong.R;
+import com.example.doacao_ong.model.Despesa;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class DoacoesRealizadasRVAdapter extends RecyclerView.Adapter<DoacoesRealizadasRVAdapter.ViewHolder> {
-    private ArrayList<DoacoesRealizadasModel> doacoesRealizadas;
+public class DespesasRVAdapter extends RecyclerView.Adapter<DespesasRVAdapter.ViewHolder> {
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
+    private ArrayList<Despesa> doacoesRealizadas;
 
-    DoacoesRealizadasRVAdapter(Context context, ArrayList<DoacoesRealizadasModel> doacoesRealizadas) {
+    DespesasRVAdapter(Context context, ArrayList<Despesa> doacoesRealizadas) {
         this.mInflater = LayoutInflater.from(context);
         this.doacoesRealizadas = doacoesRealizadas;
     }
@@ -27,19 +28,19 @@ public class DoacoesRealizadasRVAdapter extends RecyclerView.Adapter<DoacoesReal
     // inflates the row layout from xml when needed
     @NotNull
     @Override
-    public DoacoesRealizadasRVAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DespesasRVAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.doacoes_realizadas_row, parent, false);
-        return new DoacoesRealizadasRVAdapter.ViewHolder(view);
+        return new DespesasRVAdapter.ViewHolder(view);
     }
 
     // binds the data to the TextView in each row
     @Override
-    public void onBindViewHolder(DoacoesRealizadasRVAdapter.ViewHolder holder, int position) {
-        DoacoesRealizadasModel doacao = doacoesRealizadas.get(position);
+    public void onBindViewHolder(DespesasRVAdapter.ViewHolder holder, int position) {
+        Despesa doacao = doacoesRealizadas.get(position);
 
-        holder.textViewNome.setText(doacao.getNome());
         holder.textViewData.setText(doacao.getData());
-        holder.textViewValor.setText(doacao.getValor());
+        holder.textViewValor.setText("RS " + doacao.getValor());
+        holder.textViewNome.setText(doacao.getDescricao());
     }
 
     // total number of rows
